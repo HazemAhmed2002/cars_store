@@ -1,3 +1,4 @@
+import 'package:cars_store/customWidget/custom_material_button.dart';
 import 'package:cars_store/view/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,23 +55,9 @@ class VerrificationScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 70.h),
-                child: MaterialButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                    Radius.circular(25.sp),
-                  )),
-                  onPressed: () {
-                    Get.to(RegisterScreen());
-                  },
-                  color: const Color(0xff1DB854),
-                  textColor: Colors.white,
-                  minWidth: 315.w,
-                  height: 50.h,
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(fontSize: 16.sp),
-                  ),
-                ),
+                child: CustomMaterialButton(onPressed: () {
+                  Get.to(RegisterScreen());
+                }),
               ),
               SizedBox(
                 height: 28.h,

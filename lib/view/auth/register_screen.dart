@@ -1,3 +1,4 @@
+import 'package:cars_store/customWidget/custom_material_button.dart';
 import 'package:cars_store/view/my_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +40,7 @@ class RegisterScreen extends StatelessWidget {
                         "Don't miss our latest promotions and updates",
                         style: TextStyle(
                           fontSize: 14.sp,
-                          color: Color(0xff8E8E93),
+                          color: const Color(0xff8E8E93),
                         ),
                       ),
                     )
@@ -64,23 +65,9 @@ class RegisterScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 70.h),
-                child: MaterialButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                    Radius.circular(25.sp),
-                  )),
-                  onPressed: () {
-                    Get.to(MyLocationScreen());
-                  },
-                  color: const Color(0xff1DB854),
-                  textColor: Colors.white,
-                  minWidth: 315.w,
-                  height: 50.h,
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(fontSize: 16.sp),
-                  ),
-                ),
+                child: CustomMaterialButton(onPressed: () {
+                  Get.to(MyLocationScreen());
+                }),
               ),
             ],
           ),
