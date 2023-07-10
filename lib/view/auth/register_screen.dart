@@ -1,6 +1,9 @@
+import 'package:cars_store/view/my_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../customWidget/custom_text_form.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import '../../customWidget/custom_text_form.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -67,7 +70,7 @@ class RegisterScreen extends StatelessWidget {
                     Radius.circular(25.sp),
                   )),
                   onPressed: () {
-                    // Get.to(VerrificationScreen());
+                    Get.to(MyLocationScreen());
                   },
                   color: const Color(0xff1DB854),
                   textColor: Colors.white,

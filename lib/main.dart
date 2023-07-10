@@ -1,4 +1,4 @@
-import 'package:cars_store/view/login_screen.dart';
+import 'package:cars_store/view/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;

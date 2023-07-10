@@ -1,4 +1,4 @@
-import 'package:cars_store/view/verrification_screen.dart';
+import 'package:cars_store/view/auth/verrification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
@@ -27,6 +27,7 @@ class LoginScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 100.h),
               child: IntlPhoneField(
+                showCountryFlag: false,
                 decoration: const InputDecoration(
                   labelText: 'Phone Number',
                   border: OutlineInputBorder(
