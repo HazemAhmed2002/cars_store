@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import '../customWidget/custom_text_form.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -84,35 +83,6 @@ class RegisterScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomTextForm extends StatelessWidget {
-  CustomTextForm({
-    super.key,
-    required this.labelText,
-    required this.suffixIcon,
-    required this.obscureText,
-  });
-  final String labelText;
-  final IconData suffixIcon;
-  final bool obscureText;
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscureText,
-      decoration: InputDecoration(
-          labelText: labelText,
-          focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
-          ),
-          suffix: IconButton(
-              iconSize: 18.h,
-              onPressed: () {},
-              icon: Icon(
-                suffixIcon,
-              ))),
     );
   }
 }
