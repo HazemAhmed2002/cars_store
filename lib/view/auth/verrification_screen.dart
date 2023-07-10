@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:pinput/pinput.dart';
 
 class VerrificationScreen extends StatelessWidget {
   const VerrificationScreen({super.key});
@@ -34,30 +34,28 @@ class VerrificationScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 68.h),
-                child: PinCodeTextField(
-                  appContext: context,
-                  length: 4,
-                  keyboardType: TextInputType.number,
-                  textInputAction: TextInputAction.go,
-                  obscureText: false,
-                  animationType: AnimationType.fade,
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.box,
-                    borderRadius: BorderRadius.circular(15),
-                    fieldHeight: 57.h,
-                    fieldWidth: 57.w,
-                    activeFillColor: Colors.black,
-                    inactiveColor: Colors.grey,
+                child: Pinput(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  defaultPinTheme: PinTheme(
+                    width: 57.h,
+                    height: 57.w,
+                    textStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffF1F2F3),
+                      borderRadius: BorderRadius.circular(15.r),
+                    ),
                   ),
-                  animationDuration: const Duration(milliseconds: 300),
-                  onChanged: (value) {},
                 ),
               ),
               Padding(
                   padding: EdgeInsets.only(top: 70.h),
                   child: CustomMaterialButton(
                     onPressed: () {
-                      Get.to(RegisterScreen());
+                      Get.to(const RegisterScreen());
                     },
                   )),
               SizedBox(
