@@ -41,6 +41,7 @@ dependencies:
   get: ^4.6.5
   intl_phone_number_input: ^0.7.3+1
   pinput: ^2.2.31
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
