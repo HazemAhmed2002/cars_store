@@ -97,54 +97,114 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       backgroundColor: const Color(0xffF1F2F3),
-      body: Stack(
+      body: Column(
         children: [
-          CarouselSlider(
-            items: imageList
-                .map(
-                  (item) => Image.asset(
-                    item['image_path'],
-                    fit: BoxFit.cover,
-                    width: 340.w,
-                  ),
-                )
-                .toList(),
-            carouselController: carouselController,
-            options: CarouselOptions(
-              scrollPhysics: const BouncingScrollPhysics(),
-              autoPlay: true,
-              aspectRatio: 2,
-              viewportFraction: 1,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-            ),
+          Stack(
+            children: [
+              CarouselSlider(
+                items: imageList
+                    .map(
+                      (item) => Image.asset(
+                        item['image_path'],
+                        fit: BoxFit.cover,
+                        width: 340.w,
+                        height: 168.h,
+                      ),
+                    )
+                    .toList(),
+                carouselController: carouselController,
+                options: CarouselOptions(
+                  scrollPhysics: const BouncingScrollPhysics(),
+                  autoPlay: false,
+                  aspectRatio: 2,
+                  viewportFraction: 1,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                ),
+              ),
+              Positioned(
+                bottom: 10.h,
+                left: 0.w,
+                right: 0.w,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: imageList.asMap().entries.map((entry) {
+                    return GestureDetector(
+                      onTap: () => carouselController.animateToPage(entry.key),
+                      child: Container(
+                        width: currentIndex == entry.key ? 8.w : 5.w,
+                        height: 5.h,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 1.h,
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: currentIndex == entry.key
+                                ? const Color(0xff1DB854)
+                                : const Color(0xff2A3034)),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              Positioned(
+                  bottom: 20.h,
+                  left: 45.w,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(" Extreme bump test",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffA4AEAE),
+                          )),
+                      Text("First test! 100km/h extreme bump test",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          )),
+                    ],
+                  )),
+            ],
           ),
-          Positioned(
-            bottom: 10,
-            left: 0,
-            right: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: imageList.asMap().entries.map((entry) {
-                return GestureDetector(
-                  onTap: () => carouselController.animateToPage(entry.key),
-                  child: Container(
-                    width: currentIndex == entry.key ? 17 : 7,
-                    height: 7.h,
-                    margin: EdgeInsets.symmetric(
-                      horizontal: 3.h,
-                    ),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: currentIndex == entry.key
-                            ? const Color(0xff1DB854)
-                            : const Color(0xff2A3034)),
-                  ),
-                );
-              }).toList(),
+          Padding(
+            padding: EdgeInsets.only(left: 30.w, top: 20.h),
+            child: SizedBox(
+              height: 35.h,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Container(
+                        width: 120.w,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            borderRadius: BorderRadius.circular(25)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/4.png",
+                              height: 25.h,
+                              fit: BoxFit.cover,
+                            ),
+                            const Text(
+                              "RX-VISIONs",
+                              style: TextStyle(fontSize: 14),
+                            )
+                          ],
+                        ),
+                      ),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10.w,
+                      ),
+                  itemCount: 5),
             ),
           ),
         ],

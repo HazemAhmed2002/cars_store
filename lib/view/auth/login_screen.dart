@@ -1,4 +1,5 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
+import 'package:cars_store/modules/image_path.dart';
 import 'package:cars_store/view/auth/verrification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +8,19 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+
+  List<ImagePath> ImageLogin = [
+    ImagePath(
+      path: "assets/images/search.png",
+    ),
+    ImagePath(
+      path: "assets/images/icon-twitter.png",
+    ),
+    ImagePath(
+      path: "assets/images/icons8-facebook.png",
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +95,7 @@ class LoginScreen extends StatelessWidget {
               height: 75.h,
             ),
             CustomMaterialButton(onPressed: () {
-              Get.to(VerrificationScreen());
+              Get.to(const VerrificationScreen());
             }),
             SizedBox(
               height: 100.h,
@@ -103,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                         backgroundColor: const Color(0xffF1F2F3),
                         radius: 0.1.sh / 3,
                         child: Image.asset(
-                          "assets/images/search.png",
+                          "${ImageLogin[index].path}",
                           height: 25.h,
                           fit: BoxFit.cover,
                         ),
@@ -111,7 +124,7 @@ class LoginScreen extends StatelessWidget {
                   separatorBuilder: (context, index) => SizedBox(
                         width: 10.w,
                       ),
-                  itemCount: 3),
+                  itemCount: ImageLogin.length),
             ),
           ],
         ),
