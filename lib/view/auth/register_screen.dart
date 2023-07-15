@@ -66,7 +66,7 @@ class RegisterScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 70.h),
                 child: CustomMaterialButton(onPressed: () {
-                  Get.to(const MyLocationScreen());
+                  Get.to(LocationView());
                 }),
               ),
             ],
