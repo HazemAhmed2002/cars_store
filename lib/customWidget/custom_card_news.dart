@@ -13,7 +13,7 @@ class customCardNews extends StatelessWidget {
         borderRadius: BorderRadius.circular(5.r),
         color: Theme.of(context)
             .colorScheme
-            .copyWith(primary: Color(0xFFFFFFFF))
+            .copyWith(primary: const Color(0xFFFFFFFF))
             .primary,
       ),
       child: Padding(
@@ -28,9 +28,9 @@ class customCardNews extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText1?.copyWith(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xff1B1B1B)),
+                      color: const Color(0xff1B1B1B)),
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   "By Akshit ep 05,2020",
                   style: Theme.of(context).textTheme.bodyText1?.copyWith(
@@ -40,13 +40,13 @@ class customCardNews extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: 66.w,
               height: 66.w,
               decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                image: DecorationImage(
+                color: const Color(0xFFFFFFFF),
+                image: const DecorationImage(
                     image: NetworkImage(
                       "https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/99-best-luxury-cars-2023-bmw-i7-lead.jpg",
                     ),
