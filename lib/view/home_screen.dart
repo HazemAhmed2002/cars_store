@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
+  int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -396,6 +397,12 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedItemColor: Color(0xff1DB854),
           unselectedItemColor: Color(0xff8E8E93),
           type: BottomNavigationBarType.fixed,
+          currentIndex: _index,
+          onTap: (index) {
+            setState(() {
+              _index = index;
+            });
+          },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Buy car"),

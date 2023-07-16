@@ -87,18 +87,6 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: const Color(0xff1DB854),
-          unselectedItemColor: const Color(0xff8E8E93),
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Buy car"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.chat_outlined), label: "Community"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline), label: "Profile"),
-          ]),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,113 +134,127 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
               ),
             ),
             GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.8),
+              itemCount: 10,
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
                     color: Colors.white),
-                child: Stack(
+                child: Column(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                        color: const Color(0xff1DB854).withOpacity(0.20),
-                      ),
-                      width: 46.w,
-                      height: 23.h,
-                      child: Center(
-                        child: Text(
-                          "Offer",
-                          style: TextStyle(
-                              fontSize: 10.sp, color: Color(0xff1DB854)),
-                        ),
+                    Expanded(
+                      flex: 1,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  bottomRight: Radius.circular(15)),
+                              color: const Color(0xff1DB854).withOpacity(0.20),
+                            ),
+                            width: 46.w,
+                            height: 23.h,
+                            child: Center(
+                              child: Text(
+                                "Offer",
+                                style: TextStyle(
+                                    fontSize: 10.sp, color: Color(0xff1DB854)),
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.favorite_border,
+                                color: Color(0xff8E8E93),
+                              )),
+                        ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15.w),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.favorite_border,
-                                  color: Color(0xff8E8E93),
-                                )),
-                          ),
-                          Center(
-                            child: Image.asset(
-                              'assets/images/car_2.png',
-                              width: 120.w,
-                              height: 80.h,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          Text(
-                            "Audi TT RS",
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Audi/2.0-liter four-cylinder",
-                            style: TextStyle(
-                                fontSize: 10.sp, color: Color(0xff8E8E93)),
-                          ),
-                          SizedBox(
-                            height: 47.h,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 15.w),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                SizedBox(
-                                  height: 10.h,
-                                  child: ListView.separated(
-                                      scrollDirection: Axis.horizontal,
-                                      shrinkWrap: true,
-                                      physics:
-                                          const NeverScrollableScrollPhysics(),
-                                      itemBuilder: (context, index) =>
-                                          CircleAvatar(
-                                            radius: 6.h,
-                                          ),
-                                      separatorBuilder: (context, index) =>
-                                          SizedBox(
-                                            width: 5.w,
-                                          ),
-                                      itemCount: 3),
+                    Expanded(
+                      flex: 4,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/car_2.png',
+                                  width: 120.w,
+                                  height: 150.h,
+                                  fit: BoxFit.contain,
                                 ),
-                                Text(
-                                  "\$67,600",
-                                  style: TextStyle(
-                                      fontSize: 12.sp,
-                                      color: Color(0xff1DB854)),
-                                )
-                              ],
+                              ),
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Audi TT RS",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Audi/2.0-liter four-cylinder",
+                              style: TextStyle(
+                                  fontSize: 10.sp, color: Color(0xff8E8E93)),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.only(right: 15.w, top: 20.h),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SizedBox(
+                                      height: 10.h,
+                                      child: ListView.separated(
+                                          scrollDirection: Axis.horizontal,
+                                          shrinkWrap: true,
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
+                                          itemBuilder: (context, index) =>
+                                              CircleAvatar(
+                                                radius: 6.h,
+                                              ),
+                                          separatorBuilder: (context, index) =>
+                                              SizedBox(
+                                                width: 5.w,
+                                              ),
+                                          itemCount: 3),
+                                    ),
+                                    Text(
+                                      "\$67,600",
+                                      style: TextStyle(
+                                          fontSize: 12.sp,
+                                          color: Color(0xff1DB854)),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
                 ),
               ),
               padding: const EdgeInsets.all(10),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                mainAxisExtent: 250,
-              ),
-              itemCount: 10,
             ),
           ],
         ),
