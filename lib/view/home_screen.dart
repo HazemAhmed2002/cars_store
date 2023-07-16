@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../customWidget/custom_card.dart';
 import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
@@ -393,24 +392,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Color(0xff1DB854),
-          unselectedItemColor: Color(0xff8E8E93),
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _index,
-          onTap: (index) {
-            setState(() {
-              _index = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Buy car"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.chat_outlined), label: "Community"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline), label: "Profile"),
-          ]),
     );
   }
 }
