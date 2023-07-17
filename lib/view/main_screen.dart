@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     CommunityScreen(),
     ProfileScreen(),
   ];
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
