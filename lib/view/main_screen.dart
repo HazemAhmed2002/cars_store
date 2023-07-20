@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     CommunityScreen(),
     ProfileScreen(),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +36,22 @@ class _MainScreenState extends State<MainScreen> {
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Buy car"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.chat_outlined), label: "Community"),
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline), label: "Profile"),
+              icon: Icon(Icons.home),
+              label: "Buy car",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat_outlined),
+              label: "Community",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              label: "Profile",
+            ),
           ]),
     );
   }

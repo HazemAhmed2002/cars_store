@@ -57,7 +57,6 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                     borderRadius: BorderRadius.circular(20)),
                 height: 35.h,
                 child: TextFormField(
-                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       prefixIcon: Icon(
@@ -82,7 +81,10 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                       color: Colors.white,
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(50)),
-                  child: const Icon(Icons.filter_list_outlined)),
+                  child: const Icon(
+                    Icons.filter_list_outlined,
+                    color: Color(0xff1DB854),
+                  )),
             )
           ],
         ),

@@ -70,7 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(20)),
                 height: 35.h,
                 child: TextFormField(
-                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       prefixIcon: Icon(
