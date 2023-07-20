@@ -7,273 +7,317 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffF1F2F3),
-        bottomNavigationBar: buildBottomNavigation(context),
-        body: Column(
+      backgroundColor: const Color(0xffF1F2F3),
+      appBar: AppBar(
+        backgroundColor: const Color(0xffF1F2F3),
+        leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Color(0xff8E8E93),
+            )),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: 20.h),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-            //   child: getSearch(
-            //     isSearch: false,
-            //     leadingIcon: AppIcons.backtrackIcon,
-            //     leadingOnTap: () => {},
-            //     trailingIcon: AppIcons.setting,
-            //     trailingData: CircleAvatar(
-            //       backgroundColor: LightThemeColors.backgroundColor,
-            //       radius: 18.h,
-            //       child: SvgPicture.asset(
-            //           width: 14.w,
-            //           height: 14.h,
-            //           AppIcons.chat, // Replace with your close icon path
-            //           color: LightThemeColors.appBarIconsColor),
-            //     ),
-            //     size: 14,
-            //   ),
-            // ),
-            SizedBox(height: 37.9.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
+            Container(
+              height: 30.h,
+              width: 30.w,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(25.r)),
+              child: IconButton(
+                  onPressed: () {},
+                  iconSize: 14.w,
+                  icon: const Icon(
+                    Icons.wechat,
+                    color: Color(0xff8E8E93),
+                  )),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Container(
+              height: 30.h,
+              width: 30.w,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(25.r)),
+              child: IconButton(
+                  iconSize: 14.w,
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.settings,
+                    color: Color(0xff8E8E93),
+                  )),
+            ),
+          ],
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 20.w, top: 10.h),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 40.r,
+                  backgroundImage: const NetworkImage(
+                      "https://images.pexels.com/photos/1484806/pexels-photo-1484806.jpeg?auto=compress&cs=tinysrgb&w=800"),
+                ),
+                SizedBox(
+                  width: 30.w,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Sebastian",
+                      style: TextStyle(
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "BMW 3 Series/7 Series owner",
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff8E8E93)),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.w),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 64.w,
+                      height: 24.h,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: const Color(0xff1DB854),
+                          ),
+                          borderRadius: BorderRadius.circular(25)),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "+ Follow",
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            color: const Color(0xff1DB854),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
                     children: [
-                      CircleAvatar(
-                        radius: 40.r,
-                        backgroundImage: const NetworkImage(
-                            "https://www.tu-ilmenau.de/unionline/fileadmin/_processed_/0/0/csm_Person_Yury_Prof_Foto_AnLI_Footgrafie__2_.JPG_94f12fbf25.jpg"),
+                      Text(
+                        "47",
+                        style: TextStyle(
+                            fontSize: 14.sp, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Following",
+                        style: TextStyle(
+                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "8673",
+                        style: TextStyle(
+                            fontSize: 14.sp, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Follower",
+                        style: TextStyle(
+                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "67",
+                        style: TextStyle(
+                            fontSize: 14.sp, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Posts",
+                        style: TextStyle(
+                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                      ),
+                    ],
+                  ),
+                ]),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25.r),
+                      topRight: Radius.circular(25.r))),
+              child: Padding(
+                padding: EdgeInsets.all(20.w),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(children: [
+                        const Icon(
+                          Icons.widgets_outlined,
+                          color: Color(0xff8E8E93),
+                        ),
+                        Text(
+                          " Common Functions",
+                          style: TextStyle(
+                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                        )
+                      ]),
+                      SizedBox(
+                        height: 14.h,
+                      ),
+                      Center(
+                        child: Container(
+                          height: 80.h,
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => Container(
+                              width: 80.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  color: const Color(0xffF1F2F3)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Icon(
+                                    Icons.text_snippet,
+                                    color: Color(0xffFB931A),
+                                  ),
+                                  Text(
+                                    "My order",
+                                    style: TextStyle(fontSize: 12.sp),
+                                  )
+                                ],
+                              ),
+                            ),
+                            separatorBuilder: (context, index) => SizedBox(
+                              width: 10.w,
+                            ),
+                            itemCount: 4,
+                          ),
+                        ),
                       ),
                       SizedBox(
-                        width: 20.w,
+                        height: 25.h,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(children: [
+                        const Icon(
+                          Icons.time_to_leave_outlined,
+                          color: Color(0xff8E8E93),
+                        ),
+                        Text(
+                          " My cars",
+                          style: TextStyle(
+                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                        )
+                      ]),
+                      SizedBox(
+                        height: 13.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Sebastian",
-                            style: TextStyle(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8.h,
-                          ),
-                          Text(
-                            "BMW 3 Series/7 Series owner",
-                            style:
-                                Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                          ),
+                          Text("Owned/Driven",
+                              style: TextStyle(fontSize: 14.sp)),
+                          const Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            color: Color(0xff8E8E93),
+                          )
                         ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h, bottom: 24.h),
+                        child: Container(
+                            width: double.infinity,
+                            height: 1.h,
+                            color: const Color(0xff8E8E93)),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Like List", style: TextStyle(fontSize: 14.sp)),
+                          const Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            color: Color(0xff8E8E93),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      Row(children: [
+                        const Icon(
+                          Icons.list_alt,
+                          color: Color(0xff8E8E93),
+                        ),
+                        Text(
+                          " Others",
+                          style: TextStyle(
+                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                        )
+                      ]),
+                      SizedBox(
+                        height: 13.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Feedback", style: TextStyle(fontSize: 14.sp)),
+                          const Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            color: Color(0xff8E8E93),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 19.h, bottom: 15.h),
+                        child: Container(
+                            width: double.infinity,
+                            height: 1.h,
+                            color: const Color(0xff8E8E93)),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Log Out",
+                          style: TextStyle(
+                              color: const Color(0xff1DB854), fontSize: 14.sp),
+                        ),
                       )
                     ],
                   ),
-                  SizedBox(height: 22.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 70.w,
-                        height: 24.h,
-                        child: OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            side: const BorderSide(
-                              color: Colors.black,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0.r),
-                            ), // Customize the border radius
-                          ),
-                          onPressed: () {},
-                          child: Text("+ Follow",
-                              style: TextStyle(
-                                  color: Colors.green, fontSize: 10.sp)),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 33.w,
-                      ),
-                      // CustomListView(
-                      //   itemBuilder: controller.buildFirstListItemsForProfile,
-                      //   height: 60.h,
-                      //   shrinkWrap: true,
-                      //   scrollDirection: Axis.horizontal,
-                      //   itemCount: 3,
-                      //   separatorBuilder: SizedBox(
-                      //     width: 20.w,
-                      //   ),
-                      // ),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ));
-  }
-
-  Widget buildBottomNavigation(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        width: double.infinity,
-        height: 456.h,
-        decoration: BoxDecoration(
-            color: Theme.of(context)
-                .colorScheme
-                .copyWith(primary: Colors.white)
-                .primary,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30.r),
-                topRight: Radius.circular(30.r))),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 20.h),
-              Opacity(
-                opacity: .8,
-                child: Row(
-                  children: [
-                    Image.asset('assets/images/search.png'),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                    Text("Common Functions", style: TextStyle(fontSize: 12.sp))
-                  ],
                 ),
               ),
-              SizedBox(height: 15.h),
-              // CustomListView(
-              //   height: 76.h,
-              //   physics: const NeverScrollableScrollPhysics(),
-              //   shrinkWrap: true,
-              //   itemBuilder: controller.buildSecondListItemsForProfile,
-              //   scrollDirection: Axis.horizontal,
-              //   separatorBuilder: SizedBox(
-              //     width: 10.w,
-              //   ),
-              //   itemCount: controller.commonFunctionsModel.length,
-              // ),
-              SizedBox(height: 28.h),
-              Column(
-                children: [
-                  ListTile(
-                    title: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/search.png',
-                          height: 15.h,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Text(
-                          "My cars",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    trailing: Icon(
-                      Icons.keyboard_arrow_right_rounded,
-                      size: 30.h,
-                    ),
-                    subtitle: Padding(
-                      padding: EdgeInsets.only(top: 10.h),
-                      child: Text(
-                        "Owned/Driven",
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                      width: double.infinity,
-                      height: 1.h,
-                      color: Color(0xFFF3F3F5)),
-                ],
-              ),
-              SizedBox(height: 23.h),
-              ListTile(
-                leading: Text(
-                  "Like List",
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black,
-                      ),
-                ),
-                trailing: Icon(
-                  Icons.keyboard_arrow_right_rounded,
-                  size: 30.h,
-                ),
-              ),
-              Column(
-                children: [
-                  ListTile(
-                    title: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/search.png',
-                          height: 15.h,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Text(
-                          "Others",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    trailing: Icon(
-                      Icons.keyboard_arrow_right_rounded,
-                      size: 30.h,
-                    ),
-                    subtitle: Padding(
-                      padding: EdgeInsets.only(top: 10.h),
-                      child: Text(
-                        "Feedback",
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                      width: double.infinity,
-                      height: 1.h,
-                      color: Theme.of(context).colorScheme.secondary),
-                ],
-              ),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(color: Color(0xff1DB854), fontSize: 14.sp),
-                  ))
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

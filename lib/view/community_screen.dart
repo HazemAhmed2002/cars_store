@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../customWidget/custom_appbar.dart';
+
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
 
@@ -13,57 +15,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF1F2F3),
-      appBar: AppBar(
-        toolbarHeight: 90,
-        elevation: 0.0,
-        backgroundColor: const Color(0xffF1F2F3),
-        title: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.white,
-                      ),
-                      borderRadius: BorderRadius.circular(20)),
-                  height: 35.h,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        prefixIcon: Icon(
-                          color: const Color(0xff8E8E93),
-                          Icons.search,
-                          size: 18.w,
-                        ),
-                        hintText: "Search",
-                        hintStyle: const TextStyle(
-                          fontSize: 14,
-                          color: Color(0xff8E8E93),
-                        )),
-                  ),
-                ),
-              ),
-              Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Container(
-                    width: 40.w,
-                    height: 40.h,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add,
-                          color: Color(0xff1DB854),
-                        )),
-                  ))
-            ]),
-      ),
+      appBar: CustomAppBar,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(left: 20.w),
@@ -92,7 +44,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                   .bodyLarge
                                   ?.copyWith(
                                       fontSize: 14.sp,
-                                      color: Color(0xff8E8E93)),
+                                      color: const Color(0xff8E8E93)),
                             )
                           ],
                         ),
@@ -108,12 +60,12 @@ class _CommunityScreenState extends State<CommunityScreen> {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xff1DB854),
+                          color: const Color(0xff1DB854),
                         ),
                   ),
                   Icon(
                     Icons.arrow_drop_down_outlined,
-                    color: Color(0xff1DB854),
+                    color: const Color(0xff1DB854),
                     size: 30.h,
                   ),
                 ],
@@ -151,7 +103,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                           ?.copyWith(
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w700,
-                                            color: Color(0xff1DB854),
+                                            color: const Color(0xff1DB854),
                                           ),
                                     ),
                                     Text(
@@ -181,7 +133,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                       style: TextStyle(
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xff1DB854),
+                                        color: const Color(0xff1DB854),
                                       ),
                                     ),
                                   ),
