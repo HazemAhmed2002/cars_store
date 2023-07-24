@@ -304,6 +304,9 @@ class SearchModelScreen extends StatelessWidget {
                             )
                           ]),
                       SizedBox(
+                        height: 15.h,
+                      ),
+                      SizedBox(
                         height: 150,
                         child: ListView.separated(
                             scrollDirection: Axis.horizontal,

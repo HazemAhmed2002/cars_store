@@ -283,7 +283,12 @@ class SearchBrandScreen extends StatelessWidget {
                                                   style: TextStyle(
                                                       fontSize: 14.sp),
                                                 ),
-                                                const Text("data"),
+                                                Text(
+                                                  "By Albertine  Sep 13,2020",
+                                                  style: TextStyle(
+                                                      fontSize: 12.sp,
+                                                      color: Color(0xff8E8E93)),
+                                                ),
                                               ]),
                                         ),
                                         Image.asset(

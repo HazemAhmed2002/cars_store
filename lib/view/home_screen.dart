@@ -1,6 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cars_store/view/brand/brand_details.dart';
+import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import '../customWidget/custom_card.dart';
 import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
@@ -273,7 +277,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(BrandDetailsScreen());
+                    },
                     child: const Text(
                       "More >",
                       style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
@@ -362,7 +368,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(NewsDetailsScreen());
+                    },
                     child: const Text(
                       "More >",
                       style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),

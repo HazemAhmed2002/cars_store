@@ -40,15 +40,8 @@ class LocationView extends GetView<LocationController> {
                         ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 10.w),
-                    child: Image.asset(
-                      "assets/images/search.png",
-                      color: Color(0xFF8E8E93),
-                      height: 20.h,
-                      width: 20.w,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                      padding: EdgeInsets.only(left: 10.w),
+                      child: Icon(Icons.search)),
                 ],
               ),
             ),
@@ -180,10 +173,6 @@ class LocationView extends GetView<LocationController> {
       },
     );
   }
-// }
-// initList(){
-//
-// }
 }
 
 class CountryLists extends ISuspensionBean {
