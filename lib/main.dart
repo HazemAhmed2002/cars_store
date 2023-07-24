@@ -1,4 +1,5 @@
-import 'package:cars_store/view/main_screen.dart';
+import 'package:cars_store/view/search/search_brand_screen.dart';
+import 'package:cars_store/view/search/search_model_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
@@ -28,14 +29,13 @@ class MyApp extends StatelessWidget {
         designSize: Size(screenWidth!, screenHeight!),
         builder: (context, child) {
           return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            builder: DevicePreview.appBuilder,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            home: MainScreen(),
-          );
+              debugShowCheckedModeBanner: false,
+              builder: DevicePreview.appBuilder,
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
+              home: SearchModelScreen());
         });
   }
 }
