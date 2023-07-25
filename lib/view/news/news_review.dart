@@ -20,7 +20,7 @@ class ReviewNewsScreen extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: 30.h),
-              child: Container(
+              child: SizedBox(
                 height: 20.h,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
@@ -41,7 +41,7 @@ class ReviewNewsScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: ListView.separated(
                     itemBuilder: (context, index) => Container(
@@ -108,7 +108,8 @@ class ReviewNewsScreen extends StatelessWidget {
                                               maxLines: 2,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color: Color(0xff1B1B1B)),
+                                                  color:
+                                                      const Color(0xff1B1B1B)),
                                               "Porsche actually wanted to name this something else, but that name was already taycan"),
                                         ),
                                         Padding(
@@ -117,7 +118,7 @@ class ReviewNewsScreen extends StatelessWidget {
                                             "17 Reply",
                                             style: TextStyle(
                                                 fontSize: 10.sp,
-                                                color: Color(0xff1DB854)),
+                                                color: const Color(0xff1DB854)),
                                           ),
                                         ),
                                       ]),

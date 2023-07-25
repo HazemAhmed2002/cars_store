@@ -127,7 +127,7 @@ class VideoScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 60.h,
                   decoration: BoxDecoration(
-                    color: Color(0xffF1F2F3),
+                    color: const Color(0xffF1F2F3),
                     borderRadius: BorderRadius.circular(15.r),
                   ),
                   child: Padding(
@@ -148,23 +148,26 @@ class VideoScreen extends StatelessWidget {
                             Text(
                               "McLaren/Luxury",
                               style: TextStyle(
-                                  fontSize: 10.sp, color: Color(0xff8E8E93)),
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff8E8E93)),
                             ),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
                               "\$634,800",
                               style: TextStyle(
-                                  fontSize: 14.sp, color: Color(0xff1DB854)),
+                                  fontSize: 14.sp,
+                                  color: const Color(0xff1DB854)),
                             ),
                             Text(
                               "Price",
                               style: TextStyle(
-                                  fontSize: 10.sp, color: Color(0xff8E8E93)),
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff8E8E93)),
                             ),
                           ],
                         )
@@ -220,7 +223,7 @@ class VideoScreen extends StatelessWidget {
                                             "By  Sonny  Jul 29,2020",
                                             style: TextStyle(
                                                 fontSize: 12.sp,
-                                                color: Color(0xff8E8E93)),
+                                                color: const Color(0xff8E8E93)),
                                           ),
                                         ]),
                                   ),

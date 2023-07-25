@@ -221,7 +221,7 @@ class SearchModelScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Get.to(NewsDetailsScreen());
+                                Get.to(const NewsDetailsScreen());
                               },
                               child: const Row(children: [
                                 Text(
@@ -298,7 +298,7 @@ class SearchModelScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Get.to(VideoScreen());
+                                Get.to(const VideoScreen());
                               },
                               child: const Row(children: [
                                 Text(

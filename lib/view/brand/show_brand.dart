@@ -14,15 +14,15 @@ class ShowBrandScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF1F2F3),
+      backgroundColor: const Color(0xffF1F2F3),
       appBar: AppBar(
-        backgroundColor: Color(0xffF1F2F3),
+        backgroundColor: const Color(0xffF1F2F3),
         toolbarHeight: 80.h,
         title: Text(
           "Porsche",
-          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 fontSize: 14.sp,
-                color: Color(0xff1B1B1B),
+                color: const Color(0xff1B1B1B),
               ),
         ),
         leading: IconButton(
@@ -30,7 +30,7 @@ class ShowBrandScreen extends StatelessWidget {
             Get.back();
           },
           icon: Icon(
-            color: Color(0xff8E8E93),
+            color: const Color(0xff8E8E93),
             size: 30.h,
             Icons.arrow_back,
           ),
@@ -45,7 +45,7 @@ class ShowBrandScreen extends StatelessWidget {
               "Hot",
               style: TextStyle(
                 fontSize: 20.sp,
-                color: Color(0xff1B1B1B),
+                color: const Color(0xff1B1B1B),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -104,7 +104,7 @@ class ShowBrandScreen extends StatelessWidget {
                     itemCount: 4),
               ),
             ),
-            Container(
+            SizedBox(
               height: 20.h,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
@@ -123,7 +123,7 @@ class ShowBrandScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -168,7 +168,7 @@ class ShowBrandScreen extends StatelessWidget {
                                     "\$500,000",
                                     style: TextStyle(
                                         fontSize: 14.sp,
-                                        color: Color(0xff1DB854)),
+                                        color: const Color(0xff1DB854)),
                                   )
                                 ],
                               ),

@@ -10,7 +10,7 @@ import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
-  int _index = 0;
+  final int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(BrandDetailsScreen());
+                      Get.to(const BrandDetailsScreen());
                     },
                     child: const Text(
                       "More >",
@@ -369,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(NewsDetailsScreen());
+                      Get.to(const NewsDetailsScreen());
                     },
                     child: const Text(
                       "More >",
@@ -380,11 +380,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: SizedBox(
                 child: ListView.separated(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   separatorBuilder: (BuildContext context, int index) =>
                       SizedBox(

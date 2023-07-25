@@ -79,7 +79,7 @@ class SearchScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(top: 26.h, bottom: 49.h),
-              child: Container(
+              child: SizedBox(
                 height: 34.h,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
@@ -89,11 +89,11 @@ class SearchScreen extends StatelessWidget {
                     child: Container(
                       height: 34.h,
                       width: 103.w,
-                      child: const Center(child: Text("3 Series Gt")),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10.r)),
+                      child: const Center(child: Text("3 Series Gt")),
                     ),
                   ),
                   separatorBuilder: (context, index) => SizedBox(
@@ -106,7 +106,7 @@ class SearchScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     height: 20.h,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
@@ -140,7 +140,6 @@ class SearchScreen extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-          
             Expanded(
               child: ListView.separated(
                   itemBuilder: (context, index) => Container(
@@ -188,13 +187,13 @@ class SearchScreen extends StatelessWidget {
                                       "3853",
                                       style: TextStyle(
                                           fontSize: 14.sp,
-                                          color: Color(0xff1DB854)),
+                                          color: const Color(0xff1DB854)),
                                     ),
                                     Text(
                                       "Sell",
                                       style: TextStyle(
                                           fontSize: 10.sp,
-                                          color: Color(0xff8E8E93)),
+                                          color: const Color(0xff8E8E93)),
                                     ),
                                   ],
                                 ),

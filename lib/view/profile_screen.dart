@@ -193,7 +193,7 @@ class ProfileScreen extends StatelessWidget {
                         height: 14.h,
                       ),
                       Center(
-                        child: Container(
+                        child: SizedBox(
                           height: 80.h,
                           child: ListView.separated(
                             shrinkWrap: true,

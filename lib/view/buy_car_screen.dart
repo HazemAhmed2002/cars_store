@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuyCarScreen extends StatefulWidget {
-  BuyCarScreen({super.key});
+  const BuyCarScreen({super.key});
 
   @override
   State<BuyCarScreen> createState() => _BuyCarScreenState();
@@ -169,11 +169,12 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                               child: Text(
                                 "Offer",
                                 style: TextStyle(
-                                    fontSize: 10.sp, color: Color(0xff1DB854)),
+                                    fontSize: 10.sp,
+                                    color: const Color(0xff1DB854)),
                               ),
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(
@@ -211,7 +212,8 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                             Text(
                               "Audi/2.0-liter four-cylinder",
                               style: TextStyle(
-                                  fontSize: 10.sp, color: Color(0xff8E8E93)),
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff8E8E93)),
                             ),
                             Expanded(
                               flex: 1,
@@ -243,7 +245,7 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                       "\$67,600",
                                       style: TextStyle(
                                           fontSize: 12.sp,
-                                          color: Color(0xff1DB854)),
+                                          color: const Color(0xff1DB854)),
                                     )
                                   ],
                                 ),

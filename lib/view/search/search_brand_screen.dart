@@ -135,7 +135,7 @@ class SearchBrandScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          child: Container(
+                          child: SizedBox(
                             height: 20.h,
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
@@ -252,7 +252,7 @@ class SearchBrandScreen extends StatelessWidget {
                         ]),
                     Padding(
                       padding: EdgeInsets.only(top: 18.h, bottom: 18.h),
-                      child: Container(
+                      child: SizedBox(
                         height: 234.h,
                         child: ListView.separated(
                             itemBuilder: (context, index) => Container(
@@ -287,7 +287,8 @@ class SearchBrandScreen extends StatelessWidget {
                                                   "By Albertine  Sep 13,2020",
                                                   style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      color: Color(0xff8E8E93)),
+                                                      color: const Color(
+                                                          0xff8E8E93)),
                                                 ),
                                               ]),
                                         ),
@@ -329,19 +330,19 @@ class SearchBrandScreen extends StatelessWidget {
                             ]),
                           )
                         ]),
-                    Container(
+                    SizedBox(
                       height: 150,
                       child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
-                          itemBuilder: (context, index) => Container(
+                          itemBuilder: (context, index) => SizedBox(
                                 width: 150.w,
                                 height: 130.h,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Image.asset('assets/images/carr.png'),
-                                    Text("Mazda 6-test 01"),
+                                    const Text("Mazda 6-test 01"),
                                   ],
                                 ),
                               ),

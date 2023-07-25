@@ -1,7 +1,6 @@
 import 'package:azlistview/azlistview.dart';
 import 'package:cars_store/controllers/location_controller.dart';
 import 'package:cars_store/view/brand/show_brand.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,7 +25,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
             toolbarHeight: 80.h,
             title: Text(
               "Brands",
-              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontSize: 14.sp,
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -36,7 +35,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                 Get.back();
               },
               icon: Icon(
-                color: Color(0xff8E8E93),
+                color: const Color(0xff8E8E93),
                 size: 30.h,
                 Icons.arrow_back,
               ),
@@ -51,7 +50,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                 children: [
                   Text(
                     "Popular brands",
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                           color: Theme.of(context).colorScheme.onBackground,
@@ -89,7 +88,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                                         "Mercedes",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyText1
+                                            .bodyLarge
                                             ?.copyWith(
                                               fontSize: 8.sp,
                                               fontWeight: FontWeight.w400,
@@ -104,10 +103,10 @@ class BrandDetailsScreen extends GetView<LocationController> {
                               ),
                             )),
                   ),
-                  controller.countries.length != 0
+                  controller.countries.isNotEmpty
                       ? Padding(
                           padding: EdgeInsets.only(top: 30.h),
-                          child: Container(
+                          child: SizedBox(
                             height: 580.h,
                             child: AzListView(
                               indexBarItemHeight: 17.h,
@@ -134,7 +133,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                                     "${controller.item[index].title}",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodyText1
+                                        .bodyLarge
                                         ?.copyWith(
                                           fontSize: 16.sp,
                                           fontWeight: FontWeight.w400,

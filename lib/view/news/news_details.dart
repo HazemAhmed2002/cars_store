@@ -5,7 +5,7 @@ import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class NewsDetailsScreen extends StatelessWidget {
-  NewsDetailsScreen({super.key});
+  const NewsDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +105,8 @@ class NewsDetailsScreen extends StatelessWidget {
               ),
               Text(
                   maxLines: 7,
-                  style: TextStyle(fontSize: 12.sp, color: Color(0xff8E8E93)),
+                  style: TextStyle(
+                      fontSize: 12.sp, color: const Color(0xff8E8E93)),
                   "Porsche has announced the name of its Tesla Model S rival, the production-spec Mission E concept. Called the Taycan, the electric sedan is all set to get into production by next year,ahead of its international debut in 2020. The Taycan will be the first electric car by Porsche and it will continue to be a performance-oriented sportscar staying true to the Porsche tradition."),
               Padding(
                 padding: EdgeInsets.only(top: 10.h, bottom: 15.h),
@@ -120,7 +121,7 @@ class NewsDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 60.h,
                 decoration: BoxDecoration(
-                  color: Color(0xffF1F2F3),
+                  color: const Color(0xffF1F2F3),
                   borderRadius: BorderRadius.circular(15.r),
                 ),
                 child: Padding(
@@ -141,23 +142,26 @@ class NewsDetailsScreen extends StatelessWidget {
                           Text(
                             "McLaren/Luxury",
                             style: TextStyle(
-                                fontSize: 10.sp, color: Color(0xff8E8E93)),
+                                fontSize: 10.sp,
+                                color: const Color(0xff8E8E93)),
                           ),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             "\$634,800",
                             style: TextStyle(
-                                fontSize: 14.sp, color: Color(0xff1DB854)),
+                                fontSize: 14.sp,
+                                color: const Color(0xff1DB854)),
                           ),
                           Text(
                             "Price",
                             style: TextStyle(
-                                fontSize: 10.sp, color: Color(0xff8E8E93)),
+                                fontSize: 10.sp,
+                                color: const Color(0xff8E8E93)),
                           ),
                         ],
                       )
@@ -170,12 +174,13 @@ class NewsDetailsScreen extends StatelessWidget {
                 child: Text(
                   'Porsche says that the name Taycan roughly translates to “lively young horse”, paying homage to the leaping horse that has',
                   maxLines: 2,
-                  style: TextStyle(fontSize: 12.sp, color: Color(0xff8E8E93)),
+                  style: TextStyle(
+                      fontSize: 12.sp, color: const Color(0xff8E8E93)),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Color(0xffF1F2F3),
+                    color: const Color(0xffF1F2F3),
                     borderRadius: BorderRadius.circular(7.r)),
                 width: 162.w,
                 height: 25.h,
@@ -186,18 +191,18 @@ class NewsDetailsScreen extends StatelessWidget {
                       Text(
                         "Rate this news",
                         style: TextStyle(
-                            fontSize: 10.sp, color: Color(0xff1B1B1B)),
+                            fontSize: 10.sp, color: const Color(0xff1B1B1B)),
                       ),
-                      Spacer(),
-                      Icon(Icons.star_border,
+                      const Spacer(),
+                      const Icon(Icons.star_border,
                           size: 13, color: Color(0xff8E8E93)),
-                      Icon(Icons.star_border,
+                      const Icon(Icons.star_border,
                           size: 13, color: Color(0xff8E8E93)),
-                      Icon(Icons.star_border,
+                      const Icon(Icons.star_border,
                           size: 13, color: Color(0xff8E8E93)),
-                      Icon(Icons.star_border,
+                      const Icon(Icons.star_border,
                           size: 13, color: Color(0xff8E8E93)),
-                      Icon(Icons.star_border,
+                      const Icon(Icons.star_border,
                           size: 13, color: Color(0xff8E8E93)),
                     ],
                   ),
@@ -214,7 +219,7 @@ class NewsDetailsScreen extends StatelessWidget {
                       TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 187.h,
                 child: ListView.separated(
                     itemBuilder: (context, index) => Container(
@@ -246,7 +251,7 @@ class NewsDetailsScreen extends StatelessWidget {
                                           "By  Sonny  Jul 29,2020",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: Color(0xff8E8E93)),
+                                              color: const Color(0xff8E8E93)),
                                         ),
                                       ]),
                                 ),

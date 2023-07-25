@@ -10,15 +10,17 @@ import '../controllers/location_controller.dart';
 import '../customWidget/custom_text.dart';
 
 class LocationView extends GetView<LocationController> {
+  const LocationView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LocationController>(
       init: LocationController(),
       builder: (controller) {
         return Scaffold(
-            backgroundColor: Color(0xFFF1F2F3),
+            backgroundColor: const Color(0xFFF1F2F3),
             appBar: AppBar(
-              backgroundColor: Color(0xFFF1F2F3),
+              backgroundColor: const Color(0xFFF1F2F3),
               leading: Icon(
                 Icons.close,
                 size: 30.h,
@@ -30,18 +32,18 @@ class LocationView extends GetView<LocationController> {
                     text: "Search",
                     height: 30.h,
                     borderRadius: 25.r,
-                    color: Color(0xFFFFFFFF),
+                    color: const Color(0xFFFFFFFF),
                     prefixIcon: Padding(
                       padding: EdgeInsets.all(12.h),
                     ),
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                         ),
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: 10.w),
-                      child: Icon(Icons.search)),
+                      child: const Icon(Icons.search)),
                 ],
               ),
             ),
@@ -51,18 +53,18 @@ class LocationView extends GetView<LocationController> {
                 children: [
                   Text(
                     "Selected: ",
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff1B1B1B),
+                          color: const Color(0xff1B1B1B),
                         ),
                   ),
                   Text(
                     "Selected",
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xff1B1B1B),
+                          color: const Color(0xff1B1B1B),
                         ),
                   )
                 ],
@@ -72,7 +74,7 @@ class LocationView extends GetView<LocationController> {
               height: 1.sh / 1.3,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
+                color: const Color(0xFFFFFFFF),
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(
                       25.r,
@@ -94,7 +96,7 @@ class LocationView extends GetView<LocationController> {
                           Text(
                             "City location",
                             style:
-                                Theme.of(context).textTheme.bodyText1?.copyWith(
+                                Theme.of(context).textTheme.bodyLarge?.copyWith(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -116,32 +118,32 @@ class LocationView extends GetView<LocationController> {
                                   "Bangkok",
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText1
+                                      .bodyLarge
                                       ?.copyWith(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Text(
                                   "Detect ",
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText1
+                                      .bodyLarge
                                       ?.copyWith(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xFF1DB854),
+                                        color: const Color(0xFF1DB854),
                                       ),
                                 ),
                               ],
                             ),
                           ),
-                          controller.countriesName.length != 0
-                              ? Container(
+                          controller.countriesName.isNotEmpty
+                              ? SizedBox(
                                   height: 580.h,
                                   child: AzListView(
-                                    indexBarOptions: IndexBarOptions(
+                                    indexBarOptions: const IndexBarOptions(
                                       indexHintAlignment: Alignment.centerRight,
                                     ),
                                     data: controller.item,
@@ -153,7 +155,7 @@ class LocationView extends GetView<LocationController> {
                                           "${controller.item[index].title}",
                                           style: Theme.of(context)
                                               .textTheme
-                                              .bodyText1
+                                              .bodyLarge
                                               ?.copyWith(
                                                 fontSize: 16.sp,
                                                 fontWeight: FontWeight.w400,
@@ -161,7 +163,7 @@ class LocationView extends GetView<LocationController> {
                                         ),
                                       );
                                     },
-                                    physics: BouncingScrollPhysics(),
+                                    physics: const BouncingScrollPhysics(),
                                   ),
                                 )
                               : Container(),
