@@ -1,7 +1,4 @@
-import 'package:cars_store/view/brand/brand_details.dart';
-import 'package:cars_store/view/brand/show_brand.dart';
 import 'package:cars_store/view/home_screen.dart';
-import 'package:cars_store/view/search/search_brand_screen.dart';
 import 'package:cars_store/view/search/search_model_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +35,7 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: HomeScreen());
+              home: SearchModelScreen());
         });
   }
 }

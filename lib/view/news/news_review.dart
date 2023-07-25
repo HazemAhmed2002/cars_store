@@ -131,7 +131,89 @@ class ReviewNewsScreen extends StatelessWidget {
                         ),
                     itemCount: 4),
               ),
-            )
+            ),
+            Container(
+              height: 83.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.r),
+                color: const Color(0xffF1F2F3),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 40.h,
+                    width: 220.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.r),
+                        color: Colors.white),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Say something…",
+                          labelStyle: const TextStyle(fontSize: 8),
+                          prefixIcon: Icon(
+                            Icons.border_color_outlined,
+                            size: 17.w,
+                          )),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ReviewNewsScreen();
+                        },
+                      );
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.chat_bubble_outline,
+                          size: 17,
+                          color: Color(0xff8E8E93),
+                        ),
+                        Text(
+                          "83",
+                          style: TextStyle(fontSize: 10.sp),
+                        )
+                      ],
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.thumb_up_alt_outlined,
+                        size: 18,
+                        color: Color(0xff8E8E93),
+                      ),
+                      Text(
+                        "99",
+                        style: TextStyle(fontSize: 10.sp),
+                      )
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.star_border,
+                        size: 18,
+                        color: Color(0xff8E8E93),
+                      ),
+                      Text(
+                        "collect",
+                        style: TextStyle(fontSize: 10.sp),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
