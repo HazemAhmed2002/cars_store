@@ -1,4 +1,3 @@
-import 'package:cars_store/view/home_screen.dart';
 import 'package:cars_store/view/search/search_model_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

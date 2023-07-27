@@ -44,13 +44,13 @@ class ReviewNewsScreen extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: ListView.separated(
-                    itemBuilder: (context, index) => Container(
-                          height: 100.h,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15.r),
-                              border:
-                                  Border.all(color: const Color(0xffF1F2F3))),
+                    itemBuilder: (context, index) => SizedBox(
+                          height: 110.h,
+                          // decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     borderRadius: BorderRadius.circular(15.r),
+                          //     border:
+                          //         Border.all(color: const Color(0xffF1F2F3))),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -162,12 +162,12 @@ class ReviewNewsScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      showModalBottomSheet<void>(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return ReviewNewsScreen();
-                        },
-                      );
+                      // showModalBottomSheet<void>(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return ReviewNewsScreen();
+                      //   },
+                      // );
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

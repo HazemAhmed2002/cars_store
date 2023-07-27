@@ -1,4 +1,4 @@
-import 'package:cars_store/view/news/news_review.dart';
+import 'package:cars_store/view/video/video_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
@@ -125,7 +125,7 @@ class VideoScreen extends StatelessWidget {
                 ),
                 child: Container(
                   width: double.infinity,
-                  height: 60.h,
+                  height: 65.h,
                   decoration: BoxDecoration(
                     color: const Color(0xffF1F2F3),
                     borderRadius: BorderRadius.circular(15.r),
@@ -285,8 +285,9 @@ class VideoScreen extends StatelessWidget {
                 onTap: () {
                   showModalBottomSheet<void>(
                     context: context,
+                    backgroundColor: Colors.white,
                     builder: (BuildContext context) {
-                      return ReviewNewsScreen();
+                      return const ReviewVideoScreen();
                     },
                   );
                 },

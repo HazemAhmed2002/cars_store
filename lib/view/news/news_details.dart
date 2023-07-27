@@ -119,7 +119,7 @@ class NewsDetailsScreen extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 60.h,
+                height: 65.h,
                 decoration: BoxDecoration(
                   color: const Color(0xffF1F2F3),
                   borderRadius: BorderRadius.circular(15.r),
@@ -312,6 +312,7 @@ class NewsDetailsScreen extends StatelessWidget {
                 onTap: () {
                   showModalBottomSheet<void>(
                     context: context,
+                    backgroundColor: Colors.white,
                     builder: (BuildContext context) {
                       return ReviewNewsScreen();
                     },
