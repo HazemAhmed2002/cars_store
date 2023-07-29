@@ -61,7 +61,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                     runAlignment: WrapAlignment.spaceBetween,
                     spacing: 15.w,
                     children: List.generate(
-                        7,
+                        9,
                         (index) => Padding(
                               padding: EdgeInsets.only(top: 10.h),
                               child: Container(
