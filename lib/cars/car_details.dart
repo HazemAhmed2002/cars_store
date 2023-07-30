@@ -1,3 +1,5 @@
+import 'package:cars_store/cars/tabBar/faq_tabbar.dart';
+import 'package:cars_store/cars/tabBar/price_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -291,156 +293,41 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                             topLeft: Radius.circular(25.r),
                             topRight: Radius.circular(25.r))),
                     width: double.infinity,
+                    height: 600,
                     child: Padding(
-                      padding: EdgeInsets.all(20.w),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 20.h,
-                              child: ListView.separated(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) => InkWell(
-                                  onTap: () {},
-                                  child: Text(
-                                    dataList[index],
-                                    style: TextStyle(
-                                        fontSize: 14.sp,
-                                        color: const Color(0xff8E8E93)),
-                                  ),
-                                ),
-                                itemCount: dataList.length,
-                                separatorBuilder: (context, index) => SizedBox(
-                                  width: 15.w,
-                                ),
+                      padding: const EdgeInsets.all(20.0),
+                      child: DefaultTabController(
+                        length: 3,
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TabBar(
+                                isScrollable: true,
+                                labelColor: const Color(0xff1DB854),
+                                labelStyle: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.bold),
+                                unselectedLabelStyle: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.bold),
+                                unselectedLabelColor: const Color(0xff8E8E93),
+                                indicatorSize: TabBarIndicatorSize.label,
+                                indicatorColor: const Color(0xff1DB854),
+                                tabs: const [
+                                  Tab(text: 'Price'),
+                                  Tab(text: 'Reviews'),
+                                  Tab(text: 'FAQ'),
+                                ],
                               ),
-                            ),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            SizedBox(
-                              height: 245.h,
-                              width: double.infinity,
-                              child: ListView.separated(
-                                  itemBuilder: (context, index) => Container(
-                                        decoration: const UnderlineTabIndicator(
-                                            borderSide: BorderSide(
-                                                color: Color(0xffD1D1D6))),
-                                        width: double.infinity,
-                                        height: 70.h,
-                                        child: Column(children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                "Cayman",
-                                                style: TextStyle(
-                                                    fontSize: 14.sp,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Text(
-                                                "\$62,000.00",
-                                                style: TextStyle(
-                                                    fontSize: 14.sp,
-                                                    color: const Color(
-                                                        0xff1DB854)),
-                                              )
-                                            ],
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                "1988 cc, Automatic,petrol,9.0 kmpl",
-                                                style: TextStyle(
-                                                    fontSize: 10.sp,
-                                                    color: const Color(
-                                                        0xff8E8E93)),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text(
-                                                    "Compare",
-                                                    style: TextStyle(
-                                                        fontSize: 12.sp,
-                                                        color: const Color(
-                                                            0xff8E8E93)),
-                                                  ),
-                                                  Checkbox(
-                                                    activeColor:
-                                                        const Color(0xff8E8E93),
-                                                    side: BorderSide(
-                                                        color: const Color(
-                                                            0xff8E8E93),
-                                                        style:
-                                                            BorderStyle.solid,
-                                                        strokeAlign: -5.h),
-                                                    value: false,
-                                                    onChanged: (bool? value) {},
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          )
-                                        ]),
-                                      ),
-                                  separatorBuilder: (context, index) =>
-                                      SizedBox(
-                                        height: 20.h,
-                                      ),
-                                  itemCount: 4),
-                            ),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            const Text("Recommend for you"),
-                            Wrap(
-                              alignment: WrapAlignment.start,
-                              runAlignment: WrapAlignment.spaceBetween,
-                              spacing: 20.w,
-                              children: List.generate(
-                                  5,
-                                  (index) => Padding(
-                                        padding: EdgeInsets.only(top: 10.h),
-                                        child: Container(
-                                          height: 78.w,
-                                          width: 90.w,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10.r),
-                                              color: Colors.white),
-                                          child: InkWell(
-                                            onTap: () {},
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                  'assets/images/car_2.png',
-                                                  height: 60.h,
-                                                  width: 90.w,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                                Text(
-                                                  "BMW 6 Series GT",
-                                                  style: TextStyle(
-                                                      fontSize: 10.sp,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      color: const Color(
-                                                          0xff1B1B1B)),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      )),
-                            ),
-                          ]),
+                              const Expanded(
+                                child: TabBarView(children: [
+                                  PriceTabBar(),
+                                  Center(child: Text("Sedan")),
+                                  FAQTabBar(),
+                                ]),
+                              )
+                            ]),
+                      ),
                     ),
                   ),
                 ],

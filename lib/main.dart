@@ -1,4 +1,4 @@
-import 'package:cars_store/cars/car_details.dart';
+import 'package:cars_store/cars/show_car_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const CarsDetalisScreen());
+              home: const ShowCarDetailsScreen());
         });
   }
 }
