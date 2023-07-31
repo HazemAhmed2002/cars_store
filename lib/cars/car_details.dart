@@ -1,5 +1,6 @@
 import 'package:cars_store/cars/tabBar/faq_tabbar.dart';
 import 'package:cars_store/cars/tabBar/price_tabbar.dart';
+import 'package:cars_store/view/video/video_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -350,7 +351,15 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
               "Get Offers from Dealer",
               style: TextStyle(fontSize: 14.sp),
             ),
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet<void>(
+                context: context,
+                backgroundColor: Colors.white,
+                builder: (BuildContext context) {
+                  return const ReviewVideoScreen();
+                },
+              );
+            },
           ),
         ),
       ),

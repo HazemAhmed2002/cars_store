@@ -1,3 +1,4 @@
+import 'package:cars_store/cars/get_offers.dart';
 import 'package:cars_store/cars/tabBar/photos_tabbar.dart';
 import 'package:cars_store/cars/tabBar/videos_tabbar.dart';
 import 'package:flutter/material.dart';
@@ -166,7 +167,15 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
               "Get Offers from Dealer",
               style: TextStyle(fontSize: 14.sp),
             ),
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet<void>(
+                context: context,
+                backgroundColor: Colors.white,
+                builder: (BuildContext context) {
+                  return const GetOffersScreen();
+                },
+              );
+            },
           ),
         ),
       ),
