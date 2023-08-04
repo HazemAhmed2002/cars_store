@@ -172,7 +172,7 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
                 context: context,
                 backgroundColor: Colors.white,
                 builder: (BuildContext context) {
-                  return const GetOffersScreen();
+                  return GetOffersScreen();
                 },
               );
             },
