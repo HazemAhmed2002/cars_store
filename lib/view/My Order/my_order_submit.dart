@@ -119,16 +119,7 @@ class MyOrderSubmitScreen extends StatelessWidget {
                   "Submit",
                   style: TextStyle(fontSize: 14.sp),
                 ),
-                onPressed: () {
-                  showModalBottomSheet<void>(
-                    context: context,
-                    barrierColor: Colors.black.withOpacity(.8),
-                    backgroundColor: Colors.white,
-                    builder: (BuildContext context) {
-                      return const MyOrderSubmitScreen();
-                    },
-                  );
-                },
+                onPressed: () {},
               ),
             ),
           ),
