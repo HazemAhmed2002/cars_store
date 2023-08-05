@@ -3,9 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class VideoScreen extends StatelessWidget {
+class VideoScreen extends StatefulWidget {
   const VideoScreen({super.key});
+
+  @override
+  State<VideoScreen> createState() => _VideoScreenState();
+}
+
+class _VideoScreenState extends State<VideoScreen> {
+  final String url = "https://www.youtube.com/watch?v=rgu0yu1eh5c";
+
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    final videoId = YoutubePlayer.convertUrlToId(url);
+    _controller = YoutubePlayerController(
+        initialVideoId: videoId!,
+        flags: const YoutubePlayerFlags(
+          autoPlay: false,
+        ));
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +39,28 @@ class VideoScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                    'assets/images/porsche.png',
-                    fit: BoxFit.contain,
-                    width: double.infinity,
+                  YoutubePlayer(
+                    controller: _controller,
+                    showVideoProgressIndicator: true,
+                    onReady: () => debugPrint('Ready'),
+                    bottomActions: [
+                      CurrentPosition(),
+                      ProgressBar(
+                        isExpanded: true,
+                        colors: const ProgressBarColors(
+                          playedColor: Colors.amber,
+                          handleColor: Colors.amberAccent,
+                        ),
+                      ),
+                      RemainingDuration(),
+                      const PlaybackSpeedButton(),
+                    ],
                   ),
+                  // Image.asset(
+                  //   'assets/images/porsche.png',
+                  //   fit: BoxFit.contain,
+                  //   width: double.infinity,
+                  // ),
                   Positioned(
                     top: 0,
                     left: 0,

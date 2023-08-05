@@ -21,6 +21,17 @@ class LoginScreen extends StatelessWidget {
       path: "assets/images/icons8-facebook.png",
     )
   ];
+  List FunctionLogin = [
+    () {
+      print("Google");
+    },
+    () {
+      print("twiter");
+    },
+    () {
+      print("facebook");
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -115,10 +126,13 @@ class LoginScreen extends StatelessWidget {
                   itemBuilder: (context, index) => CircleAvatar(
                         backgroundColor: const Color(0xffF1F2F3),
                         radius: 0.1.sh / 3,
-                        child: Image.asset(
-                          "${ImageLogin[index].path}",
-                          height: 25.h,
-                          fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: FunctionLogin[index],
+                          child: Image.asset(
+                            "${ImageLogin[index].path}",
+                            height: 25.h,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                   separatorBuilder: (context, index) => SizedBox(

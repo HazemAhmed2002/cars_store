@@ -1,11 +1,19 @@
-import 'package:cars_store/view/My%20Order/my_order.dart';
+import 'package:cars_store/view/auth/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
 import 'package:device_preview/device_preview.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   // runApp(DevicePreview(
   //   builder: (context) => const MyApp(),
   // ));
@@ -34,7 +42,7 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const MyOrderScreen());
+              home: LoginScreen());
         });
   }
 }
