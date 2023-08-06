@@ -1,5 +1,4 @@
 import 'package:azlistview/azlistview.dart';
-import 'package:cars_store/customWidget/custom_text_form.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -125,16 +124,19 @@ class LocationView extends GetView<LocationController> {
                                       ),
                                 ),
                                 const Spacer(),
-                                Text(
-                                  "Detect ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge
-                                      ?.copyWith(
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w400,
-                                        color: const Color(0xFF1DB854),
-                                      ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Text(
+                                    "Detect ",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color(0xFF1DB854),
+                                        ),
+                                  ),
                                 ),
                               ],
                             ),
