@@ -1,6 +1,7 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
 import 'package:cars_store/modules/image_path.dart';
 import 'package:cars_store/services/auth_service.dart';
+import 'package:cars_store/view/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -133,9 +134,10 @@ class LoginScreen extends GetView<LoginController> {
                               backgroundColor: const Color(0xffF1F2F3),
                               radius: 0.1.sh / 3,
                               child: InkWell(
-                                onTap: () {
+                                onTap: () async {
                                   if (index == 0) {
-                                    controller.signInWithGoogle();
+                                    await controller.signInWithGoogle();
+                                    Get.off(const MainScreen());
                                     print("Done");
                                   }
                                 },

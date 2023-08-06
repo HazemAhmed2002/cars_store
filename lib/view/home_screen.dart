@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   carouselController: carouselController,
                   options: CarouselOptions(
                     scrollPhysics: const BouncingScrollPhysics(),
-                    autoPlay: false,
+                    autoPlay: true,
                     aspectRatio: 2,
                     viewportFraction: 1,
                     onPageChanged: (index, reason) {

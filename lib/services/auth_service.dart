@@ -15,11 +15,6 @@ class LoginController extends GetxController {
     update();
   }
 
-  // List<CommunicationMechanism> communicationMechanism = [
-  //   CommunicationMechanism(image: "https://firebasestorage.googleapis.com/v0/b/carapp-2f7b1.appspot.com/o/icons8-facebook.svg?alt=media&token=09f766a1-8c90-441e-a5ab-afb03b5ce2f8"),
-  //   CommunicationMechanism(image: "https://firebasestorage.googleapis.com/v0/b/carapp-2f7b1.appspot.com/o/search.svg?alt=media&token=f869f279-c769-416b-982d-b63e2ebe5393"),
-  // ];
-
   loginWithPhone(TextEditingController phoneController) async {
     await FirebaseAuth.instance
         .verifyPhoneNumber(
