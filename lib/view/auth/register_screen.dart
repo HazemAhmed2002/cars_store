@@ -1,4 +1,5 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
+import 'package:cars_store/view/main_screen.dart';
 import 'package:cars_store/view/my_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,7 +67,7 @@ class RegisterScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 70.h),
                 child: CustomMaterialButton(onPressed: () {
-                  Get.to(LocationView());
+                  Get.to(const MainScreen());
                 }),
               ),
             ],
