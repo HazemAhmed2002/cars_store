@@ -21,18 +21,6 @@ class LoginScreen extends GetView<LoginController> {
       path: "assets/images/icons8-facebook.png",
     )
   ];
-  // List FunctionLogin = [
-  //   () {
-  //     controller.signInWithGoogle();
-  //     print("Google");
-  //   },
-  //   () {
-  //     print("twiter");
-  //   },
-  //   () {
-  //     print("facebook");
-  //   },
-  // ];
 
   @override
   Widget build(BuildContext context) {
