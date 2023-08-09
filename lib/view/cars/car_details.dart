@@ -1,5 +1,5 @@
-import 'package:cars_store/cars/tabBar/faq_tabbar.dart';
-import 'package:cars_store/cars/tabBar/price_tabbar.dart';
+import 'package:cars_store/view/cars/tabBar/faq_tabbar.dart';
+import 'package:cars_store/view/cars/tabBar/price_tabbar.dart';
 import 'package:cars_store/view/video/video_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

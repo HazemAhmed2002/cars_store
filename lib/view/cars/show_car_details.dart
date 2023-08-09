@@ -1,6 +1,6 @@
-import 'package:cars_store/cars/get_offers.dart';
-import 'package:cars_store/cars/tabBar/photos_tabbar.dart';
-import 'package:cars_store/cars/tabBar/videos_tabbar.dart';
+import 'package:cars_store/view/cars/get_offers.dart';
+import 'package:cars_store/view/cars/tabBar/photos_tabbar.dart';
+import 'package:cars_store/view/cars/tabBar/videos_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
