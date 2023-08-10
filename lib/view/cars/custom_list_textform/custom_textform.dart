@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,7 +36,7 @@ class CustomListTextForm extends StatelessWidget {
             ),
             label: Text(
               label[index],
-              style: TextStyle(fontSize: 14.sp, color: const Color(0xff8E8E93)),
+              style: TextStyle(fontSize: 14.sp, color: ColorHelper.iconColor),
             ),
           ),
         ),

@@ -11,7 +11,8 @@ class CustomTextFormWithRecord extends StatelessWidget {
   TextStyle? style;
   double? width;
   CustomTextFormWithRecord(
-      {this.height,
+      {super.key,
+      this.height,
       this.color,
       this.borderRadius,
       this.text,
@@ -34,8 +35,8 @@ class CustomTextFormWithRecord extends StatelessWidget {
           decoration: InputDecoration(
               hintText: text,
               isCollapsed: true,
-              suffixIcon: suffixIcon ?? null,
-              prefixIcon: prefixIcon ?? null,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
               hintStyle: style,
               border: InputBorder.none),
         ),

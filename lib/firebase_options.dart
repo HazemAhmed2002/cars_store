@@ -43,7 +43,7 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
+  static FirebaseOptions web = const FirebaseOptions(
     apiKey: 'AIzaSyB5dhwwg_S5IqYiEGgZMeyrM-7vBNhCbo0',
     appId: '1:405028735635:web:9696c3b900c7517be65b66',
     messagingSenderId: '405028735635',
@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
     measurementId: 'G-4M16CMWE9W',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
+  static FirebaseOptions android = const FirebaseOptions(
     apiKey: 'AIzaSyChLUj0dBIs6-ug6q0NueDXdd-kvm0D7EY',
     appId: '1:405028735635:android:850aa75fabde8f9de65b66',
     messagingSenderId: '405028735635',
@@ -61,23 +61,25 @@ class DefaultFirebaseOptions {
     storageBucket: 'toopoptech-d6970.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
+  static FirebaseOptions ios = const FirebaseOptions(
     apiKey: 'AIzaSyDyWlnKxoRfI0Kc9dWmkCghBzV2mBGE24I',
     appId: '1:405028735635:ios:6c300fbfc4f4d61de65b66',
     messagingSenderId: '405028735635',
     projectId: 'toopoptech-d6970',
     storageBucket: 'toopoptech-d6970.appspot.com',
-    iosClientId: '405028735635-isqfv9j1o58bjliplstifkr891h2r2h2.apps.googleusercontent.com',
+    iosClientId:
+        '405028735635-isqfv9j1o58bjliplstifkr891h2r2h2.apps.googleusercontent.com',
     iosBundleId: 'com.example.carsStore',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
+  static FirebaseOptions macos = const FirebaseOptions(
     apiKey: 'AIzaSyDyWlnKxoRfI0Kc9dWmkCghBzV2mBGE24I',
     appId: '1:405028735635:ios:a4a9cf511144240be65b66',
     messagingSenderId: '405028735635',
     projectId: 'toopoptech-d6970',
     storageBucket: 'toopoptech-d6970.appspot.com',
-    iosClientId: '405028735635-e38rsli1jos5m5ov812ecbjqgpatalt2.apps.googleusercontent.com',
+    iosClientId:
+        '405028735635-e38rsli1jos5m5ov812ecbjqgpatalt2.apps.googleusercontent.com',
     iosBundleId: 'com.example.carsStore.RunnerTests',
   );
 }

@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +34,8 @@ class PriceTabBar extends StatelessWidget {
                         Text(
                           "\$62,000.00",
                           style: TextStyle(
-                              fontSize: 14.sp, color: const Color(0xff1DB854)),
+                              fontSize: 14.sp,
+                              color: ColorHelper.secondryColor),
                         )
                       ],
                     ),
@@ -43,7 +45,7 @@ class PriceTabBar extends StatelessWidget {
                         Text(
                           "1988 cc, Automatic,petrol,9.0 kmpl",
                           style: TextStyle(
-                              fontSize: 10.sp, color: const Color(0xff8E8E93)),
+                              fontSize: 10.sp, color: ColorHelper.iconColor),
                         ),
                         Row(
                           children: [
@@ -51,12 +53,12 @@ class PriceTabBar extends StatelessWidget {
                               "Compare",
                               style: TextStyle(
                                   fontSize: 12.sp,
-                                  color: const Color(0xff8E8E93)),
+                                  color: ColorHelper.iconColor),
                             ),
                             Checkbox(
-                              activeColor: const Color(0xff8E8E93),
+                              activeColor: ColorHelper.iconColor,
                               side: BorderSide(
-                                  color: const Color(0xff8E8E93),
+                                  color: ColorHelper.iconColor,
                                   style: BorderStyle.solid,
                                   strokeAlign: -5.h),
                               value: false,
@@ -104,7 +106,7 @@ class PriceTabBar extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w400,
-                                  color: const Color(0xff1B1B1B)),
+                                  color: ColorHelper.secondryColorText),
                             )
                           ],
                         ),

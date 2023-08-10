@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/brand/brand_details.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         toolbarHeight: 90,
         elevation: 0.0,
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,10 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               }).toList(),
               value: dropdownValue,
-              icon: const Icon(Icons.keyboard_arrow_down,
-                  color: Color(0xff8E8E93)),
+              icon:
+                  Icon(Icons.keyboard_arrow_down, color: ColorHelper.iconColor),
               elevation: 16,
-              style: const TextStyle(color: Color(0xff8E8E93)),
+              style: TextStyle(color: ColorHelper.iconColor),
               onChanged: (String? value) {
                 setState(() {
                   dropdownValue = value!;
@@ -77,14 +78,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        color: const Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                         Icons.search,
                         size: 18.w,
                       ),
                       hintText: "Search",
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                         fontSize: 14,
-                        color: Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                       )),
                 ),
               ),
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -153,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: currentIndex == entry.key
-                                  ? const Color(0xff1DB854)
+                                  ? ColorHelper.secondryColor
                                   : const Color(0xff2A3034)),
                         ),
                       );
@@ -232,9 +233,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {},
-                    child: const Text(
+                    child: Text(
                       "More >",
-                      style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                      style: TextStyle(
+                          fontSize: 12, color: ColorHelper.secondryColor),
                     ),
                   )
                 ],
@@ -280,9 +282,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Get.to(const BrandDetailsScreen());
                     },
-                    child: const Text(
+                    child: Text(
                       "More >",
-                      style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                      style: TextStyle(
+                          fontSize: 12, color: ColorHelper.secondryColor),
                     ),
                   )
                 ],
@@ -326,9 +329,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   InkWell(
                     onTap: () {},
-                    child: const Text(
+                    child: Text(
                       "More >",
-                      style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                      style: TextStyle(
+                          fontSize: 12, color: ColorHelper.secondryColor),
                     ),
                   )
                 ],
@@ -371,9 +375,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Get.to(const NewsDetailsScreen());
                     },
-                    child: const Text(
+                    child: Text(
                       "More >",
-                      style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                      style: TextStyle(
+                          fontSize: 12, color: ColorHelper.secondryColor),
                     ),
                   )
                 ],

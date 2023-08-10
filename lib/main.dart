@@ -15,9 +15,9 @@ void main() async {
   );
 
   // runApp(DevicePreview(
-  //   builder: (context) => const MyApp(),
+  //   builder: (context) =>  MyApp(),
   // ));
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 double? screenWidth;

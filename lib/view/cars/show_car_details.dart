@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/cars/get_offers.dart';
 import 'package:cars_store/view/cars/tabBar/photos_tabbar.dart';
 import 'package:cars_store/view/cars/tabBar/videos_tabbar.dart';
@@ -32,17 +33,17 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         leading: Align(
           child: IconButton(
             onPressed: () {},
             iconSize: 30.h,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back,
-              color: Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             ),
           ),
         ),
@@ -56,11 +57,11 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
             );
           }).toList(),
           value: dropdownValue,
-          icon: const Icon(
+          icon: Icon(
             Icons.keyboard_arrow_down,
-            color: Color(0xff8E8E93),
+            color: ColorHelper.iconColor,
           ),
-          style: const TextStyle(color: Color(0xff8E8E93)),
+          style: TextStyle(color: ColorHelper.iconColor),
           onChanged: (String? value) {
             setState(() {
               dropdownValue = value!;
@@ -73,7 +74,7 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
             child: Icon(
               Icons.share,
               size: 17.w,
-              color: const Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             ),
           ),
         ],
@@ -126,14 +127,14 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
                     children: [
                       TabBar(
                         isScrollable: true,
-                        labelColor: const Color(0xff1DB854),
+                        labelColor: ColorHelper.secondryColor,
                         labelStyle: TextStyle(
                             fontSize: 14.sp, fontWeight: FontWeight.bold),
                         unselectedLabelStyle: TextStyle(
                             fontSize: 14.sp, fontWeight: FontWeight.bold),
-                        unselectedLabelColor: const Color(0xff8E8E93),
+                        unselectedLabelColor: ColorHelper.iconColor,
                         indicatorSize: TabBarIndicatorSize.label,
-                        indicatorColor: const Color(0xff1DB854),
+                        indicatorColor: ColorHelper.secondryColor,
                         tabs: const [
                           Tab(text: 'Photos'),
                           Tab(text: 'Videos'),
@@ -161,7 +162,7 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
           child: MaterialButton(
             minWidth: double.infinity,
             height: 45.h,
-            color: const Color(0xff1DB854),
+            color: ColorHelper.secondryColor,
             textColor: Colors.white,
             child: Text(
               "Get Offers from Dealer",
@@ -172,7 +173,7 @@ class _ShowCarDetailsScreenState extends State<ShowCarDetailsScreen> {
                 context: context,
                 backgroundColor: Colors.white,
                 builder: (BuildContext context) {
-                  return GetOffersScreen();
+                  return const GetOffersScreen();
                 },
               );
             },

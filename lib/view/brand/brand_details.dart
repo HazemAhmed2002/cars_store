@@ -1,5 +1,6 @@
 import 'package:azlistview/azlistview.dart';
 import 'package:cars_store/controllers/location_controller.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/brand/show_brand.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +36,7 @@ class BrandDetailsScreen extends GetView<LocationController> {
                 Get.back();
               },
               icon: Icon(
-                color: const Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
                 size: 30.h,
                 Icons.arrow_back,
               ),

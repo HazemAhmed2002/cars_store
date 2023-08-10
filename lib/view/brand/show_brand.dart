@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
@@ -14,15 +15,15 @@ class ShowBrandScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         toolbarHeight: 80.h,
         title: Text(
           "Porsche",
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 fontSize: 14.sp,
-                color: const Color(0xff1B1B1B),
+                color: ColorHelper.secondryColorText,
               ),
         ),
         leading: IconButton(
@@ -30,7 +31,7 @@ class ShowBrandScreen extends StatelessWidget {
             Get.back();
           },
           icon: Icon(
-            color: const Color(0xff8E8E93),
+            color: ColorHelper.iconColor,
             size: 30.h,
             Icons.arrow_back,
           ),
@@ -45,7 +46,7 @@ class ShowBrandScreen extends StatelessWidget {
               "Hot",
               style: TextStyle(
                 fontSize: 20.sp,
-                color: const Color(0xff1B1B1B),
+                color: ColorHelper.secondryColorText,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -68,13 +69,13 @@ class ShowBrandScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Row(
+                                Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Icon(
                                       Icons.favorite_border,
                                       size: 20,
-                                      color: Color(0xff8E8E93),
+                                      color: ColorHelper.iconColor,
                                     ),
                                   ],
                                 ),
@@ -92,7 +93,7 @@ class ShowBrandScreen extends StatelessWidget {
                                   "\$23,500",
                                   style: TextStyle(
                                       fontSize: 12.sp,
-                                      color: const Color(0xff1DB854)),
+                                      color: ColorHelper.secondryColor),
                                 )
                               ],
                             ),
@@ -114,7 +115,7 @@ class ShowBrandScreen extends StatelessWidget {
                   child: Text(
                     dataList[index],
                     style: TextStyle(
-                        fontSize: 14.sp, color: const Color(0xff8E8E93)),
+                        fontSize: 14.sp, color: ColorHelper.iconColor),
                   ),
                 ),
                 itemCount: dataList.length,
@@ -162,13 +163,13 @@ class ShowBrandScreen extends StatelessWidget {
                                     "Honda/Hatchback/\$26,670",
                                     style: TextStyle(
                                         fontSize: 10.sp,
-                                        color: const Color(0xff8E8E93)),
+                                        color: ColorHelper.iconColor),
                                   ),
                                   Text(
                                     "\$500,000",
                                     style: TextStyle(
                                         fontSize: 14.sp,
-                                        color: const Color(0xff1DB854)),
+                                        color: ColorHelper.secondryColor),
                                   )
                                 ],
                               ),

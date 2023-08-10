@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
@@ -19,14 +20,14 @@ class ReviewVideoScreen extends StatelessWidget {
               children: [
                 Text(
                   "Reviews",
-                  style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xff8E8E93)),
+                  style:
+                      TextStyle(fontSize: 14.sp, color: ColorHelper.iconColor),
                 ),
                 IconButton(
                     onPressed: () {
                       Get.back();
                     },
-                    icon: const Icon(Icons.close, color: Color(0xff8E8E93)))
+                    icon: Icon(Icons.close, color: ColorHelper.iconColor))
               ],
             ),
           ),
@@ -68,26 +69,26 @@ class ReviewVideoScreen extends StatelessWidget {
                                         child: Text("Uzair Arshad",
                                             style: TextStyle(
                                               fontSize: 14.sp,
-                                              color: const Color(0xff8E8E93),
+                                              color: ColorHelper.iconColor,
                                             )),
                                       ),
                                       Text(
                                         "3 hours ago",
                                         style: TextStyle(
                                             fontSize: 10.sp,
-                                            color: const Color(0xffC7C7CC)),
+                                            color: ColorHelper.textColor),
                                       ),
                                       const Spacer(),
                                       Text(
                                         "78 ",
                                         style: TextStyle(
                                             fontSize: 12.sp,
-                                            color: const Color(0xff8E8E93)),
+                                            color: ColorHelper.iconColor),
                                       ),
-                                      const Icon(
+                                      Icon(
                                         Icons.thumb_up_alt_outlined,
                                         size: 12,
-                                        color: Color(0xff8E8E93),
+                                        color: ColorHelper.iconColor,
                                       )
                                     ],
                                   ),
@@ -97,7 +98,8 @@ class ReviewVideoScreen extends StatelessWidget {
                                         maxLines: 2,
                                         style: TextStyle(
                                             fontSize: 12.sp,
-                                            color: const Color(0xff1B1B1B)),
+                                            color:
+                                                ColorHelper.secondryColorText),
                                         "Porsche actually wanted to name this something else, but that name was already taycan"),
                                   ),
                                   Padding(
@@ -106,7 +108,7 @@ class ReviewVideoScreen extends StatelessWidget {
                                       "17 Reply",
                                       style: TextStyle(
                                           fontSize: 10.sp,
-                                          color: const Color(0xff1DB854)),
+                                          color: ColorHelper.secondryColor),
                                     ),
                                   ),
                                 ]),
@@ -124,7 +126,7 @@ class ReviewVideoScreen extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.r),
-              color: const Color(0xffF1F2F3),
+              color: ColorHelper.circleAvatarColor,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

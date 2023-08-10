@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/news/news_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,13 +16,14 @@ class NewsDetailsScreen extends StatelessWidget {
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back,
-              color: Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             )),
         title: Text(
           "News",
-          style: TextStyle(fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+          style:
+              TextStyle(fontSize: 14.sp, color: ColorHelper.secondryColorText),
         ),
         actions: [
           Padding(
@@ -31,7 +33,7 @@ class NewsDetailsScreen extends StatelessWidget {
               width: 30,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.r),
-                  color: const Color(0xffF1F2F3)),
+                  color: ColorHelper.circleAvatarColor),
               child: Icon(
                 Icons.share,
                 size: 15.w,
@@ -68,12 +70,13 @@ class NewsDetailsScreen extends StatelessWidget {
                         Text(
                           "Abbey",
                           style: TextStyle(
-                              fontSize: 15.sp, color: const Color(0xff1B1B1B)),
+                              fontSize: 15.sp,
+                              color: ColorHelper.secondryColorText),
                         ),
                         Text(
                           "Aug 31,2020 / 89623 Views",
                           style: TextStyle(
-                              fontSize: 10.sp, color: const Color(0xff8E8E93)),
+                              fontSize: 10.sp, color: ColorHelper.iconColor),
                         ),
                       ],
                     ),
@@ -84,7 +87,7 @@ class NewsDetailsScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
-                          color: const Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                         borderRadius: BorderRadius.circular(25.r),
                       ),
@@ -95,7 +98,7 @@ class NewsDetailsScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
-                            color: const Color(0xff1DB854),
+                            color: ColorHelper.secondryColor,
                           ),
                         ),
                       ),
@@ -105,8 +108,8 @@ class NewsDetailsScreen extends StatelessWidget {
               ),
               Text(
                   maxLines: 7,
-                  style: TextStyle(
-                      fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                  style:
+                      TextStyle(fontSize: 12.sp, color: ColorHelper.iconColor),
                   "Porsche has announced the name of its Tesla Model S rival, the production-spec Mission E concept. Called the Taycan, the electric sedan is all set to get into production by next year,ahead of its international debut in 2020. The Taycan will be the first electric car by Porsche and it will continue to be a performance-oriented sportscar staying true to the Porsche tradition."),
               Padding(
                 padding: EdgeInsets.only(top: 10.h, bottom: 15.h),
@@ -121,7 +124,7 @@ class NewsDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 65.h,
                 decoration: BoxDecoration(
-                  color: const Color(0xffF1F2F3),
+                  color: ColorHelper.circleAvatarColor,
                   borderRadius: BorderRadius.circular(15.r),
                 ),
                 child: Padding(
@@ -142,8 +145,7 @@ class NewsDetailsScreen extends StatelessWidget {
                           Text(
                             "McLaren/Luxury",
                             style: TextStyle(
-                                fontSize: 10.sp,
-                                color: const Color(0xff8E8E93)),
+                                fontSize: 10.sp, color: ColorHelper.iconColor),
                           ),
                         ],
                       ),
@@ -155,13 +157,12 @@ class NewsDetailsScreen extends StatelessWidget {
                             "\$634,800",
                             style: TextStyle(
                                 fontSize: 14.sp,
-                                color: const Color(0xff1DB854)),
+                                color: ColorHelper.secondryColor),
                           ),
                           Text(
                             "Price",
                             style: TextStyle(
-                                fontSize: 10.sp,
-                                color: const Color(0xff8E8E93)),
+                                fontSize: 10.sp, color: ColorHelper.iconColor),
                           ),
                         ],
                       )
@@ -174,13 +175,13 @@ class NewsDetailsScreen extends StatelessWidget {
                 child: Text(
                   'Porsche says that the name Taycan roughly translates to “lively young horse”, paying homage to the leaping horse that has',
                   maxLines: 2,
-                  style: TextStyle(
-                      fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                  style:
+                      TextStyle(fontSize: 12.sp, color: ColorHelper.iconColor),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: const Color(0xffF1F2F3),
+                    color: ColorHelper.circleAvatarColor,
                     borderRadius: BorderRadius.circular(7.r)),
                 width: 162.w,
                 height: 25.h,
@@ -191,19 +192,20 @@ class NewsDetailsScreen extends StatelessWidget {
                       Text(
                         "Rate this news",
                         style: TextStyle(
-                            fontSize: 10.sp, color: const Color(0xff1B1B1B)),
+                            fontSize: 10.sp,
+                            color: ColorHelper.secondryColorText),
                       ),
                       const Spacer(),
-                      const Icon(Icons.star_border,
-                          size: 13, color: Color(0xff8E8E93)),
-                      const Icon(Icons.star_border,
-                          size: 13, color: Color(0xff8E8E93)),
-                      const Icon(Icons.star_border,
-                          size: 13, color: Color(0xff8E8E93)),
-                      const Icon(Icons.star_border,
-                          size: 13, color: Color(0xff8E8E93)),
-                      const Icon(Icons.star_border,
-                          size: 13, color: Color(0xff8E8E93)),
+                      Icon(Icons.star_border,
+                          size: 13, color: ColorHelper.iconColor),
+                      Icon(Icons.star_border,
+                          size: 13, color: ColorHelper.iconColor),
+                      Icon(Icons.star_border,
+                          size: 13, color: ColorHelper.iconColor),
+                      Icon(Icons.star_border,
+                          size: 13, color: ColorHelper.iconColor),
+                      Icon(Icons.star_border,
+                          size: 13, color: ColorHelper.iconColor),
                     ],
                   ),
                 ),
@@ -225,10 +227,10 @@ class NewsDetailsScreen extends StatelessWidget {
                     itemBuilder: (context, index) => Container(
                           height: 86.h,
                           decoration: BoxDecoration(
-                              color: const Color(0xffF1F2F3),
+                              color: ColorHelper.circleAvatarColor,
                               borderRadius: BorderRadius.circular(15.r),
-                              border:
-                                  Border.all(color: const Color(0xffF1F2F3))),
+                              border: Border.all(
+                                  color: ColorHelper.circleAvatarColor)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -251,7 +253,7 @@ class NewsDetailsScreen extends StatelessWidget {
                                           "By  Sonny  Jul 29,2020",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: const Color(0xff8E8E93)),
+                                              color: ColorHelper.iconColor),
                                         ),
                                       ]),
                                 ),
@@ -279,7 +281,7 @@ class NewsDetailsScreen extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
-          color: const Color(0xffF1F2F3),
+          color: ColorHelper.circleAvatarColor,
         ),
         child: Padding(
           padding: EdgeInsets.only(
@@ -321,10 +323,10 @@ class NewsDetailsScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.chat_bubble_outline,
                       size: 17,
-                      color: Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                     ),
                     Text(
                       "83",
@@ -336,10 +338,10 @@ class NewsDetailsScreen extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.thumb_up_alt_outlined,
                     size: 18,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                   Text(
                     "99",
@@ -350,10 +352,10 @@ class NewsDetailsScreen extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.star_border,
                     size: 18,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                   Text(
                     "collect",

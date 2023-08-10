@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,11 +20,11 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
         toolbarHeight: 90,
         elevation: 0.0,
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,10 +38,10 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                 );
               }).toList(),
               value: dropdownValue,
-              icon: const Icon(Icons.keyboard_arrow_down,
-                  color: Color(0xff8E8E93)),
+              icon:
+                  Icon(Icons.keyboard_arrow_down, color: ColorHelper.iconColor),
               elevation: 16,
-              style: const TextStyle(color: Color(0xff8E8E93)),
+              style: TextStyle(color: ColorHelper.iconColor),
               onChanged: (String? value) {
                 setState(() {
                   dropdownValue = value!;
@@ -60,14 +61,14 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       prefixIcon: Icon(
-                        color: const Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                         Icons.search,
                         size: 18.w,
                       ),
                       hintText: "Search",
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                         fontSize: 14,
-                        color: Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                       )),
                 ),
               ),
@@ -81,9 +82,9 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                       color: Colors.white,
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(50)),
-                  child: const Icon(
+                  child: Icon(
                     Icons.filter_list_outlined,
-                    color: Color(0xff1DB854),
+                    color: ColorHelper.secondryColor,
                   )),
             )
           ],
@@ -161,7 +162,8 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(15),
                                   bottomRight: Radius.circular(15)),
-                              color: const Color(0xff1DB854).withOpacity(0.20),
+                              color:
+                                  ColorHelper.secondryColor.withOpacity(0.20),
                             ),
                             width: 46.w,
                             height: 23.h,
@@ -170,16 +172,16 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                 "Offer",
                                 style: TextStyle(
                                     fontSize: 10.sp,
-                                    color: const Color(0xff1DB854)),
+                                    color: ColorHelper.secondryColor),
                               ),
                             ),
                           ),
                           const Spacer(),
                           IconButton(
                               onPressed: () {},
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.favorite_border,
-                                color: Color(0xff8E8E93),
+                                color: ColorHelper.iconColor,
                               )),
                         ],
                       ),
@@ -213,7 +215,7 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                               "Audi/2.0-liter four-cylinder",
                               style: TextStyle(
                                   fontSize: 10.sp,
-                                  color: const Color(0xff8E8E93)),
+                                  color: ColorHelper.iconColor),
                             ),
                             Expanded(
                               flex: 1,
@@ -245,7 +247,7 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                       "\$67,600",
                                       style: TextStyle(
                                           fontSize: 12.sp,
-                                          color: const Color(0xff1DB854)),
+                                          color: ColorHelper.secondryColor),
                                     )
                                   ],
                                 ),

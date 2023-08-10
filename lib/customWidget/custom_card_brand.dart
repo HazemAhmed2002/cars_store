@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +22,7 @@ class customCardBrand extends StatelessWidget {
           ),
           Text(
             "Toyota",
-            style: TextStyle(fontSize: 12, color: Color(0xff8E8E93)),
+            style: TextStyle(fontSize: 12, color: ColorHelper.iconColor),
           )
         ],
       ),

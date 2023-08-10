@@ -32,7 +32,7 @@ class LoginController extends GetxController {
       codeAutoRetrievalTimeout: (String verificationId) {},
     )
         .then((value) {
-      Get.off(const VerrificationScreen());
+      Get.off(VerrificationScreen());
 
       update();
     }).catchError((error) {

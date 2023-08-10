@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:cars_store/view/video/video_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,16 +12,16 @@ class SearchModelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         appBar: AppBar(
-          backgroundColor: const Color(0xffF1F2F3),
+          backgroundColor: ColorHelper.circleAvatarColor,
           leading: IconButton(
               onPressed: () {
                 // Get.to(SearchScreen());
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back,
-                color: Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               )),
           title: Container(
             decoration: BoxDecoration(
@@ -31,16 +32,16 @@ class SearchModelScreen extends StatelessWidget {
             child: TextFormField(
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
-                prefixIconColor: const Color(0xff8E8E93),
-                suffixIconColor: const Color(0xff8E8E93),
+                prefixIconColor: ColorHelper.iconColor,
+                suffixIconColor: ColorHelper.iconColor,
                 prefixIcon: const Icon(
                   Icons.search,
                   size: 20,
                 ),
                 hintText: "Search",
-                hintStyle: const TextStyle(
+                hintStyle: TextStyle(
                   fontSize: 14,
-                  color: Color(0xff8E8E93),
+                  color: ColorHelper.iconColor,
                 ),
                 suffix: IconButton(
                   onPressed: () {},
@@ -85,17 +86,17 @@ class SearchModelScreen extends StatelessWidget {
                         "Lexus/Luxury/The 2.3L EcoBoost",
                         style: TextStyle(
                           fontSize: 10.sp,
-                          color: const Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                       ),
                       SizedBox(
                         height: 14.h,
                       ),
-                      const Text(
+                      Text(
                         "\$456,800-\$486,800",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                       )
                     ],
@@ -152,14 +153,16 @@ class SearchModelScreen extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {},
-                                child: const Row(children: [
+                                child: Row(children: [
                                   Text(
                                     "All",
                                     style: TextStyle(
-                                        fontSize: 12, color: Color(0xff1DB854)),
+                                        fontSize: 12,
+                                        color: ColorHelper.secondryColor),
                                   ),
                                   Icon(Icons.arrow_forward_ios,
-                                      size: 11, color: Color(0xff1DB854)),
+                                      size: 11,
+                                      color: ColorHelper.secondryColor),
                                 ]),
                               )
                             ]),
@@ -170,9 +173,10 @@ class SearchModelScreen extends StatelessWidget {
                             itemBuilder: (context, index) => Container(
                                   height: 60,
                                   width: double.infinity,
-                                  decoration: const UnderlineTabIndicator(
+                                  decoration: UnderlineTabIndicator(
                                       borderSide: BorderSide(
-                                          width: 1, color: Color(0xff8E8E93))),
+                                          width: 1,
+                                          color: ColorHelper.iconColor)),
                                   child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
@@ -192,15 +196,15 @@ class SearchModelScreen extends StatelessWidget {
                                               style: TextStyle(
                                                   fontSize: 15.sp,
                                                   fontWeight: FontWeight.bold,
-                                                  color:
-                                                      const Color(0xff1DB854)),
+                                                  color: ColorHelper
+                                                      .secondryColor),
                                             ),
                                           ],
                                         ),
-                                        const Text(
+                                        Text(
                                           "3456 cc,Automatic,Petrol,15.4kmpl",
                                           style: TextStyle(
-                                              color: Color(0xff8E8E93)),
+                                              color: ColorHelper.iconColor),
                                         )
                                       ]),
                                 ),
@@ -223,14 +227,15 @@ class SearchModelScreen extends StatelessWidget {
                               onTap: () {
                                 Get.to(const NewsDetailsScreen());
                               },
-                              child: const Row(children: [
+                              child: Row(children: [
                                 Text(
                                   "More",
                                   style: TextStyle(
-                                      fontSize: 12, color: Color(0xff1DB854)),
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
                                 ),
                                 Icon(Icons.arrow_forward_ios,
-                                    size: 11, color: Color(0xff1DB854)),
+                                    size: 11, color: ColorHelper.secondryColor),
                               ]),
                             )
                           ]),
@@ -242,11 +247,12 @@ class SearchModelScreen extends StatelessWidget {
                               itemBuilder: (context, index) => Container(
                                     height: 86.h,
                                     decoration: BoxDecoration(
-                                        color: const Color(0xffF1F2F3),
+                                        color: ColorHelper.circleAvatarColor,
                                         borderRadius:
                                             BorderRadius.circular(15.r),
                                         border: Border.all(
-                                            color: const Color(0xffF1F2F3))),
+                                            color:
+                                                ColorHelper.circleAvatarColor)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Row(
@@ -298,16 +304,17 @@ class SearchModelScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Get.to(const VideoScreen());
+                                Get.to(VideoScreen());
                               },
-                              child: const Row(children: [
+                              child: Row(children: [
                                 Text(
                                   "More",
                                   style: TextStyle(
-                                      fontSize: 12, color: Color(0xff1DB854)),
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
                                 ),
                                 Icon(Icons.arrow_forward_ios,
-                                    size: 11, color: Color(0xff1DB854)),
+                                    size: 11, color: ColorHelper.secondryColor),
                               ]),
                             )
                           ]),
@@ -353,9 +360,10 @@ class SearchModelScreen extends StatelessWidget {
                               itemBuilder: (context, index) => Container(
                                     width: 150.w,
                                     decoration: BoxDecoration(
-                                        color: const Color(0xffF1F2F3),
+                                        color: ColorHelper.circleAvatarColor,
                                         border: Border.all(
-                                            color: const Color(0xffF1F2F3)),
+                                            color:
+                                                ColorHelper.circleAvatarColor),
                                         borderRadius:
                                             BorderRadius.circular(10.r)),
                                     child: Padding(
@@ -366,14 +374,14 @@ class SearchModelScreen extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          const Row(
+                                          Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.end,
                                             children: [
                                               Icon(
                                                 Icons.favorite_border,
                                                 size: 20,
-                                                color: Color(0xff8E8E93),
+                                                color: ColorHelper.iconColor,
                                               ),
                                             ],
                                           ),
@@ -391,7 +399,8 @@ class SearchModelScreen extends StatelessWidget {
                                             "\$23,500",
                                             style: TextStyle(
                                                 fontSize: 12.sp,
-                                                color: const Color(0xff1DB854)),
+                                                color:
+                                                    ColorHelper.secondryColor),
                                           )
                                         ],
                                       ),

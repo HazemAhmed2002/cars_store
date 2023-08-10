@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
@@ -12,9 +13,9 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
         title: Container(
           decoration: BoxDecoration(
@@ -24,19 +25,19 @@ class SearchScreen extends StatelessWidget {
           height: 30.h,
           child: TextFormField(
             textAlignVertical: TextAlignVertical.center,
-            decoration: const InputDecoration(
-              prefixIconColor: Color(0xff8E8E93),
-              suffixIconColor: Color(0xff8E8E93),
-              prefixIcon: Icon(
+            decoration: InputDecoration(
+              prefixIconColor: ColorHelper.iconColor,
+              suffixIconColor: ColorHelper.iconColor,
+              prefixIcon: const Icon(
                 Icons.search,
                 size: 20,
               ),
               hintText: "Search",
               hintStyle: TextStyle(
                 fontSize: 14,
-                color: Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               ),
-              suffixIcon: Icon(
+              suffixIcon: const Icon(
                 Icons.mic,
                 size: 17,
               ),
@@ -61,16 +62,16 @@ class SearchScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {},
-                  child: const Row(
+                  child: Row(
                     children: [
                       Icon(
                         Icons.delete,
-                        color: Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                       ),
                       Text(
                         "Clear History",
-                        style:
-                            TextStyle(color: Color(0xff8E8E93), fontSize: 12),
+                        style: TextStyle(
+                            color: ColorHelper.iconColor, fontSize: 12),
                       )
                     ],
                   ),
@@ -116,7 +117,7 @@ class SearchScreen extends StatelessWidget {
                         child: Text(
                           dataList[index],
                           style: TextStyle(
-                              fontSize: 14.sp, color: const Color(0xff8E8E93)),
+                              fontSize: 14.sp, color: ColorHelper.iconColor),
                         ),
                       ),
                       itemCount: dataList.length,
@@ -126,13 +127,13 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Row(
+                Row(
                   children: [
                     Text(
                       "Dec, 2020",
-                      style: TextStyle(color: Color(0xff8E8E93)),
+                      style: TextStyle(color: ColorHelper.iconColor),
                     ),
-                    Icon(Icons.arrow_drop_down, color: Color(0xff8E8E93)),
+                    Icon(Icons.arrow_drop_down, color: ColorHelper.iconColor),
                   ],
                 )
               ],
@@ -175,7 +176,7 @@ class SearchScreen extends StatelessWidget {
                                     "Honda/Hatchback/\$26,670",
                                     style: TextStyle(
                                         fontSize: 10.sp,
-                                        color: const Color(0xff8E8E93)),
+                                        color: ColorHelper.iconColor),
                                   ),
                                 ],
                               ),
@@ -187,13 +188,13 @@ class SearchScreen extends StatelessWidget {
                                       "3853",
                                       style: TextStyle(
                                           fontSize: 14.sp,
-                                          color: const Color(0xff1DB854)),
+                                          color: ColorHelper.secondryColor),
                                     ),
                                     Text(
                                       "Sell",
                                       style: TextStyle(
                                           fontSize: 10.sp,
-                                          color: const Color(0xff8E8E93)),
+                                          color: ColorHelper.iconColor),
                                     ),
                                   ],
                                 ),

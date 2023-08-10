@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,12 +24,12 @@ class customCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.favorite_border,
-                      color: Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                     ),
                   ),
                 ],
@@ -49,9 +50,9 @@ class customCard extends StatelessWidget {
             "Lamborghini",
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
-          const Text(
+          Text(
             "\$67,600",
-            style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+            style: TextStyle(fontSize: 12, color: ColorHelper.secondryColor),
           ),
           SizedBox(
             height: 15.h,

@@ -1,8 +1,10 @@
-import 'package:cars_store/cars/custom_list_textform/custom_textForm.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+
+import 'custom_list_textform/custom_textform.dart';
 
 class GetOffersScreen extends StatelessWidget {
   const GetOffersScreen({super.key});
@@ -21,16 +23,16 @@ class GetOffersScreen extends StatelessWidget {
                   const Spacer(),
                   Text("Get Offers from Dealer",
                       style: TextStyle(
-                          fontSize: 14.sp, color: const Color(0xff8E8E93))),
+                          fontSize: 14.sp, color: ColorHelper.iconColor)),
                   const Spacer(),
                   IconButton(
                       onPressed: () {
                         Get.back();
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.close,
                         size: 25,
-                        color: Color(0xffAAB6C3),
+                        color: ColorHelper.ligthModeColorTextAndIcon,
                       ))
                 ],
               ),
@@ -60,17 +62,17 @@ class GetOffersScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xff1B1B1B)),
+                            color: ColorHelper.secondryColorText),
                       ),
                       Text(
                         "Porsche/Luxury/The 2.3L EcoBoost",
                         style: TextStyle(
-                            fontSize: 10.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 10.sp, color: ColorHelper.iconColor),
                       ),
                       Text(
                         "\$62,000.00-\$74,000.00",
                         style: TextStyle(
-                            fontSize: 14.sp, color: const Color(0xff1DB854)),
+                            fontSize: 14.sp, color: ColorHelper.secondryColor),
                       )
                     ],
                   )
@@ -90,7 +92,7 @@ class GetOffersScreen extends StatelessWidget {
                 child: MaterialButton(
                   minWidth: double.infinity,
                   height: 45.h,
-                  color: const Color(0xff1DB854),
+                  color: ColorHelper.secondryColor,
                   textColor: Colors.white,
                   child: Text(
                     "Submit",

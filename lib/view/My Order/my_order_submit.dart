@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,13 +17,13 @@ class MyOrderSubmitScreen extends StatelessWidget {
             children: [
               Text(
                 "Discount",
-                style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+                style: TextStyle(
+                    fontSize: 14.sp, color: ColorHelper.secondryColorText),
               ),
               Text(
                 "\$8.00",
-                style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+                style: TextStyle(
+                    fontSize: 14.sp, color: ColorHelper.secondryColorText),
               )
             ],
           ),
@@ -36,14 +37,14 @@ class MyOrderSubmitScreen extends StatelessWidget {
                 "Total",
                 style: TextStyle(
                     fontSize: 20.sp,
-                    color: const Color(0xff1B1B1B),
+                    color: ColorHelper.secondryColorText,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 "\$126.00",
                 style: TextStyle(
                     fontSize: 20.sp,
-                    color: const Color(0xff1DB854),
+                    color: ColorHelper.secondryColor,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -52,7 +53,8 @@ class MyOrderSubmitScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 37.h, bottom: 13.h),
             child: Text(
               "Address",
-              style: TextStyle(fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+              style: TextStyle(
+                  fontSize: 14.sp, color: ColorHelper.secondryColorText),
             ),
           ),
           Row(
@@ -61,14 +63,14 @@ class MyOrderSubmitScreen extends StatelessWidget {
                 child: Text(
                   maxLines: 2,
                   "6360 Sunset Blvd, Los Angeles,\n CA 90028 United States",
-                  style: TextStyle(
-                      fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                  style:
+                      TextStyle(fontSize: 12.sp, color: ColorHelper.iconColor),
                 ),
               ),
               Text(
                 "Edit",
-                style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xff1DB854)),
+                style: TextStyle(
+                    fontSize: 14.sp, color: ColorHelper.secondryColor),
               )
             ],
           ),
@@ -79,7 +81,8 @@ class MyOrderSubmitScreen extends StatelessWidget {
             ),
             child: Text(
               "Payment",
-              style: TextStyle(fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+              style: TextStyle(
+                  fontSize: 14.sp, color: ColorHelper.secondryColorText),
             ),
           ),
           Row(
@@ -94,13 +97,13 @@ class MyOrderSubmitScreen extends StatelessWidget {
                   Text(
                     "**** **** **** 3247",
                     style: TextStyle(
-                        fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                        fontSize: 12.sp, color: ColorHelper.iconColor),
                   ),
                 ],
               ),
-              const Icon(
+              Icon(
                 Icons.keyboard_arrow_down,
-                color: Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               )
             ],
           ),
@@ -113,7 +116,7 @@ class MyOrderSubmitScreen extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45.h,
-                color: const Color(0xff1DB854),
+                color: ColorHelper.secondryColor,
                 textColor: Colors.white,
                 child: Text(
                   "Submit",

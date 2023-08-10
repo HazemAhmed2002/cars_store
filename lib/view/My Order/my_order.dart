@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/My%20Order/my_order_submit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,9 +12,9 @@ class MyOrderScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
-            color: Color(0xff8E8E93),
+            color: ColorHelper.iconColor,
           ),
         ),
         centerTitle: true,
@@ -21,7 +22,7 @@ class MyOrderScreen extends StatelessWidget {
           "My Order",
           style: TextStyle(
             fontSize: 14.sp,
-            color: const Color(0xff1B1B1B),
+            color: ColorHelper.secondryColorText,
           ),
         ),
         actions: [
@@ -31,7 +32,7 @@ class MyOrderScreen extends StatelessWidget {
               "Edit",
               style: TextStyle(
                 fontSize: 14.sp,
-                color: const Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               ),
             ),
           )
@@ -47,7 +48,7 @@ class MyOrderScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff1B1B1B),
+                color: ColorHelper.secondryColorText,
               ),
             ),
           ),
@@ -57,9 +58,10 @@ class MyOrderScreen extends StatelessWidget {
                 itemBuilder: (context, index) => Container(
                       height: 86.h,
                       decoration: BoxDecoration(
-                          color: const Color(0xffF1F2F3),
+                          color: ColorHelper.circleAvatarColor,
                           borderRadius: BorderRadius.circular(15.r),
-                          border: Border.all(color: const Color(0xffF1F2F3))),
+                          border:
+                              Border.all(color: ColorHelper.circleAvatarColor)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -106,22 +108,22 @@ class MyOrderScreen extends StatelessWidget {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                const Icon(
+                                                Icon(
                                                   Icons.remove,
                                                   size: 16,
-                                                  color: Color(0xff8E8E93),
+                                                  color: ColorHelper.iconColor,
                                                 ),
                                                 Text(
                                                   "1",
                                                   style: TextStyle(
                                                       fontSize: 14.sp,
-                                                      color: const Color(
-                                                          0xff1B1B1B)),
+                                                      color: ColorHelper
+                                                          .secondryColorText),
                                                 ),
-                                                const Icon(
+                                                Icon(
                                                   Icons.add,
                                                   size: 16,
-                                                  color: Color(0xff8E8E93),
+                                                  color: ColorHelper.iconColor,
                                                 ),
                                               ],
                                             )),
@@ -131,7 +133,8 @@ class MyOrderScreen extends StatelessWidget {
                                             "\$21.00",
                                             style: TextStyle(
                                                 fontSize: 14.sp,
-                                                color: const Color(0xff1DB854)),
+                                                color:
+                                                    ColorHelper.secondryColor),
                                           ),
                                         ),
                                       ],
@@ -153,7 +156,7 @@ class MyOrderScreen extends StatelessWidget {
         width: double.infinity,
         height: 310.h,
         decoration: BoxDecoration(
-            color: const Color(0xffF1F2F3),
+            color: ColorHelper.circleAvatarColor,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.r),
                 topRight: Radius.circular(20.r))),
@@ -166,12 +169,12 @@ class MyOrderScreen extends StatelessWidget {
                 Text(
                   "Discount",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+                      fontSize: 14.sp, color: ColorHelper.secondryColorText),
                 ),
                 Text(
                   "\$8.00",
                   style: TextStyle(
-                      fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+                      fontSize: 14.sp, color: ColorHelper.secondryColorText),
                 )
               ],
             ),
@@ -185,14 +188,14 @@ class MyOrderScreen extends StatelessWidget {
                   "Total",
                   style: TextStyle(
                       fontSize: 20.sp,
-                      color: const Color(0xff1B1B1B),
+                      color: ColorHelper.secondryColorText,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "\$126.00",
                   style: TextStyle(
                       fontSize: 20.sp,
-                      color: const Color(0xff1DB854),
+                      color: ColorHelper.secondryColor,
                       fontWeight: FontWeight.bold),
                 )
               ],
@@ -207,14 +210,14 @@ class MyOrderScreen extends StatelessWidget {
                   "Order time",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: const Color(0xff1B1B1B),
+                    color: ColorHelper.secondryColorText,
                   ),
                 ),
                 Text(
                   "7:15 pm",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: const Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                 )
               ],
@@ -229,14 +232,14 @@ class MyOrderScreen extends StatelessWidget {
                   "Expected delivery time",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: const Color(0xff1B1B1B),
+                    color: ColorHelper.secondryColorText,
                   ),
                 ),
                 Text(
                   "18:00 pm",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: const Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                 )
               ],
@@ -250,7 +253,7 @@ class MyOrderScreen extends StatelessWidget {
                 child: MaterialButton(
                   minWidth: double.infinity,
                   height: 45.h,
-                  color: const Color(0xff1DB854),
+                  color: ColorHelper.secondryColor,
                   textColor: Colors.white,
                   child: Text(
                     "Pay now",

@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/search/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,16 +16,16 @@ class SearchBrandScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         leading: IconButton(
             onPressed: () {
               Get.to(SearchScreen());
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back,
-              color: Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             )),
         title: Container(
           decoration: BoxDecoration(
@@ -35,16 +36,16 @@ class SearchBrandScreen extends StatelessWidget {
           child: TextFormField(
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-              prefixIconColor: const Color(0xff8E8E93),
-              suffixIconColor: const Color(0xff8E8E93),
+              prefixIconColor: ColorHelper.iconColor,
+              suffixIconColor: ColorHelper.iconColor,
               prefixIcon: const Icon(
                 Icons.search,
                 size: 20,
               ),
               hintText: "Search",
-              hintStyle: const TextStyle(
+              hintStyle: TextStyle(
                 fontSize: 14,
-                color: Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               ),
               suffix: IconButton(
                 onPressed: () {},
@@ -94,8 +95,7 @@ class SearchBrandScreen extends StatelessWidget {
                           Text(
                             "Brand introduction",
                             style: TextStyle(
-                                fontSize: 12.sp,
-                                color: const Color(0xff8E8E93)),
+                                fontSize: 12.sp, color: ColorHelper.iconColor),
                           ),
                         ],
                       ),
@@ -106,12 +106,12 @@ class SearchBrandScreen extends StatelessWidget {
                       Text(
                         "16",
                         style: TextStyle(
-                            fontSize: 20.sp, color: const Color(0xff1DB854)),
+                            fontSize: 20.sp, color: ColorHelper.secondryColor),
                       ),
                       Text(
                         "Available",
                         style: TextStyle(
-                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 12.sp, color: ColorHelper.iconColor),
                       ),
                     ],
                   )
@@ -146,7 +146,7 @@ class SearchBrandScreen extends StatelessWidget {
                                   dataList[index],
                                   style: TextStyle(
                                       fontSize: 14.sp,
-                                      color: const Color(0xff8E8E93)),
+                                      color: ColorHelper.iconColor),
                                 ),
                               ),
                               itemCount: dataList.length,
@@ -156,14 +156,14 @@ class SearchBrandScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Row(children: [
+                        Row(children: [
                           Text(
                             "All",
                             style: TextStyle(
-                                fontSize: 12, color: Color(0xff1DB854)),
+                                fontSize: 12, color: ColorHelper.secondryColor),
                           ),
                           Icon(Icons.arrow_forward_ios,
-                              size: 11, color: Color(0xff1DB854)),
+                              size: 11, color: ColorHelper.secondryColor),
                         ])
                       ],
                     ),
@@ -177,9 +177,9 @@ class SearchBrandScreen extends StatelessWidget {
                             itemBuilder: (context, index) => Container(
                                   width: 150.w,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xffF1F2F3),
+                                      color: ColorHelper.circleAvatarColor,
                                       border: Border.all(
-                                          color: const Color(0xffF1F2F3)),
+                                          color: ColorHelper.circleAvatarColor),
                                       borderRadius:
                                           BorderRadius.circular(10.r)),
                                   child: Padding(
@@ -190,14 +190,14 @@ class SearchBrandScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        const Row(
+                                        Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
                                             Icon(
                                               Icons.favorite_border,
                                               size: 20,
-                                              color: Color(0xff8E8E93),
+                                              color: ColorHelper.iconColor,
                                             ),
                                           ],
                                         ),
@@ -215,7 +215,7 @@ class SearchBrandScreen extends StatelessWidget {
                                           "\$23,500",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: const Color(0xff1DB854)),
+                                              color: ColorHelper.secondryColor),
                                         )
                                       ],
                                     ),
@@ -239,14 +239,15 @@ class SearchBrandScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {},
-                            child: const Row(children: [
+                            child: Row(children: [
                               Text(
                                 "More",
                                 style: TextStyle(
-                                    fontSize: 12, color: Color(0xff1DB854)),
+                                    fontSize: 12,
+                                    color: ColorHelper.secondryColor),
                               ),
                               Icon(Icons.arrow_forward_ios,
-                                  size: 11, color: Color(0xff1DB854)),
+                                  size: 11, color: ColorHelper.secondryColor),
                             ]),
                           )
                         ]),
@@ -258,10 +259,11 @@ class SearchBrandScreen extends StatelessWidget {
                             itemBuilder: (context, index) => Container(
                                   height: 86.h,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xffF1F2F3),
+                                      color: ColorHelper.circleAvatarColor,
                                       borderRadius: BorderRadius.circular(15.r),
                                       border: Border.all(
-                                          color: const Color(0xffF1F2F3))),
+                                          color:
+                                              ColorHelper.circleAvatarColor)),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Row(
@@ -287,8 +289,8 @@ class SearchBrandScreen extends StatelessWidget {
                                                   "By Albertine  Sep 13,2020",
                                                   style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      color: const Color(
-                                                          0xff8E8E93)),
+                                                      color: ColorHelper
+                                                          .iconColor),
                                                 ),
                                               ]),
                                         ),
@@ -319,14 +321,15 @@ class SearchBrandScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {},
-                            child: const Row(children: [
+                            child: Row(children: [
                               Text(
                                 "More",
                                 style: TextStyle(
-                                    fontSize: 12, color: Color(0xff1DB854)),
+                                    fontSize: 12,
+                                    color: ColorHelper.secondryColor),
                               ),
                               Icon(Icons.arrow_forward_ios,
-                                  size: 11, color: Color(0xff1DB854)),
+                                  size: 11, color: ColorHelper.secondryColor),
                             ]),
                           )
                         ]),

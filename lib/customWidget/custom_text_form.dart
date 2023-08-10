@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextForm extends StatelessWidget {
-  CustomTextForm({
+  const CustomTextForm({
     super.key,
     required this.labelText,
     required this.suffixIcon,

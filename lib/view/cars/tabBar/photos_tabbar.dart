@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class PhotosTabBar extends StatelessWidget {
             "2020 Cayman 2T",
             style: TextStyle(
               fontSize: 12.sp,
-              color: const Color(0xff1B1B1B),
+              color: ColorHelper.secondryColorText,
             ),
           ),
           SizedBox(
@@ -52,7 +53,7 @@ class PhotosTabBar extends StatelessWidget {
             "2020 boxster spyder",
             style: TextStyle(
               fontSize: 12.sp,
-              color: const Color(0xff1B1B1B),
+              color: ColorHelper.secondryColorText,
             ),
           ),
           SizedBox(

@@ -1,4 +1,5 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,7 @@ class VerrificationScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xffF1F2F3),
+                      color: ColorHelper.circleAvatarColor,
                       borderRadius: BorderRadius.circular(15.r),
                     ),
                   ),
@@ -61,10 +62,10 @@ class VerrificationScreen extends StatelessWidget {
               SizedBox(
                 height: 28.h,
               ),
-              const Text(
+              Text(
                 "Resend in 54 Sec",
                 style: TextStyle(
-                  color: Color(0xff1DB854),
+                  color: ColorHelper.secondryColor,
                 ),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ class CustomMaterialButton extends StatelessWidget {
         Radius.circular(25.sp),
       )),
       onPressed: onPressed,
-      color: const Color(0xff1DB854),
+      color: ColorHelper.secondryColor,
       textColor: Colors.white,
       minWidth: 315.w,
       height: 50.h,

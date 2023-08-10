@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/cars/tabBar/faq_tabbar.dart';
 import 'package:cars_store/view/cars/tabBar/price_tabbar.dart';
 import 'package:cars_store/view/video/video_review.dart';
@@ -32,9 +33,9 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
-          color: Color(0xff8E8E93),
+          color: ColorHelper.iconColor,
         ),
         centerTitle: true,
         title: Row(
@@ -50,26 +51,26 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
               }).toList(),
               underline: const SizedBox(),
               value: dropdownValue,
-              icon: const Icon(Icons.keyboard_arrow_down,
-                  color: Color(0xff8E8E93)),
+              icon:
+                  Icon(Icons.keyboard_arrow_down, color: ColorHelper.iconColor),
               elevation: 16,
-              style: const TextStyle(color: Color(0xff8E8E93)),
+              style: TextStyle(color: ColorHelper.iconColor),
               onChanged: (String? value) {
                 setState(() {
                   dropdownValue = value!;
                 });
               },
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child: Icon(
                 Icons.favorite_border,
-                color: Color(0xff8E8E93),
+                color: ColorHelper.iconColor,
               ),
             ),
-            const Icon(
+            Icon(
               Icons.share,
-              color: Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             ),
           ],
         ),
@@ -94,9 +95,9 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                       image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/car3.png")),
-                      color: const Color(0xffF1F2F3),
+                      color: ColorHelper.circleAvatarColor,
                       borderRadius: BorderRadius.circular(5.r),
-                      border: Border.all(color: const Color(0xffF1F2F3))),
+                      border: Border.all(color: ColorHelper.circleAvatarColor)),
                   child: Center(
                     child: Text(
                       "+200 \nImages",
@@ -114,7 +115,7 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-                color: const Color(0xffF1F2F3),
+                color: ColorHelper.circleAvatarColor,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25.r),
                     topRight: Radius.circular(25.r))),
@@ -139,12 +140,12 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                               "Compare",
                               style: TextStyle(
                                   fontSize: 12.sp,
-                                  color: const Color(0xff8E8E93)),
+                                  color: ColorHelper.iconColor),
                             ),
                             Checkbox(
-                              activeColor: const Color(0xff8E8E93),
+                              activeColor: ColorHelper.iconColor,
                               side: BorderSide(
-                                  color: const Color(0xff8E8E93),
+                                  color: ColorHelper.iconColor,
                                   style: BorderStyle.solid,
                                   strokeAlign: -5.h),
                               value: false,
@@ -161,7 +162,7 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                       "\$62,000.00-\$74,000.00",
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: const Color(0xff1DB854),
+                        color: ColorHelper.secondryColor,
                       ),
                     ),
                   ),
@@ -175,9 +176,9 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                     child: Row(children: [
                       RatingBar.builder(
                         initialRating: 3,
-                        unratedColor: const Color(0xff8E8E93),
+                        unratedColor: ColorHelper.iconColor,
                         updateOnDrag: true,
-                        glowColor: const Color(0xff1DB854),
+                        glowColor: ColorHelper.secondryColor,
                         glowRadius: 0.0,
                         minRating: 1,
                         itemSize: 15.h,
@@ -186,9 +187,9 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                         itemCount: 5,
                         onRatingUpdate: (rating) {},
                         itemPadding: EdgeInsets.symmetric(horizontal: 1.w),
-                        itemBuilder: (context, _) => const Icon(
+                        itemBuilder: (context, _) => Icon(
                           Icons.star,
-                          color: Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                       ),
                       SizedBox(
@@ -197,12 +198,13 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                       Text(
                         "268 review",
                         style: TextStyle(
-                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 12.sp, color: ColorHelper.iconColor),
                       ),
                       const Spacer(),
                       Text("Rate This car",
                           style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xff1DB854))),
+                              fontSize: 12.sp,
+                              color: ColorHelper.secondryColor)),
                     ]),
                   ),
                   Padding(
@@ -213,8 +215,7 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                           Text(
                             "Key Specs",
                             style: TextStyle(
-                                fontSize: 14.sp,
-                                color: const Color(0xff8E8E93)),
+                                fontSize: 14.sp, color: ColorHelper.iconColor),
                           ),
                           Row(
                             children: [
@@ -222,12 +223,12 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                                 "All Specs",
                                 style: TextStyle(
                                     fontSize: 12.sp,
-                                    color: const Color(0xff1DB854)),
+                                    color: ColorHelper.secondryColor),
                               ),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 size: 12.w,
-                                color: const Color(0xff1DB854),
+                                color: ColorHelper.secondryColor,
                               )
                             ],
                           )
@@ -269,13 +270,14 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                                             "360 N·m",
                                             style: TextStyle(
                                                 fontSize: 12.sp,
-                                                color: const Color(0xff1B1B1B)),
+                                                color: ColorHelper
+                                                    .secondryColorText),
                                           ),
                                           Text(
                                             "Engine Power",
                                             style: TextStyle(
                                                 fontSize: 10.sp,
-                                                color: const Color(0xff8E8E93)),
+                                                color: ColorHelper.iconColor),
                                           ),
                                         ]),
                                   ),
@@ -304,16 +306,16 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                             children: [
                               TabBar(
                                 isScrollable: true,
-                                labelColor: const Color(0xff1DB854),
+                                labelColor: ColorHelper.secondryColor,
                                 labelStyle: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.bold),
                                 unselectedLabelStyle: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.bold),
-                                unselectedLabelColor: const Color(0xff8E8E93),
+                                unselectedLabelColor: ColorHelper.iconColor,
                                 indicatorSize: TabBarIndicatorSize.label,
-                                indicatorColor: const Color(0xff1DB854),
+                                indicatorColor: ColorHelper.secondryColor,
                                 tabs: const [
                                   Tab(text: 'Price'),
                                   Tab(text: 'Reviews'),
@@ -345,7 +347,7 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
           child: MaterialButton(
             minWidth: double.infinity,
             height: 45.h,
-            color: const Color(0xff1DB854),
+            color: ColorHelper.secondryColor,
             textColor: Colors.white,
             child: Text(
               "Get Offers from Dealer",
@@ -356,7 +358,7 @@ class _CarsDetalisScreenState extends State<CarsDetalisScreen> {
                 context: context,
                 backgroundColor: Colors.white,
                 builder: (BuildContext context) {
-                  return const ReviewVideoScreen();
+                  return ReviewVideoScreen();
                 },
               );
             },

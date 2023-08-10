@@ -1,4 +1,5 @@
 import 'package:azlistview/azlistview.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,9 +18,9 @@ class LocationView extends GetView<LocationController> {
       init: LocationController(),
       builder: (controller) {
         return Scaffold(
-            backgroundColor: const Color(0xFFF1F2F3),
+            backgroundColor: ColorHelper.circleAvatarColor,
             appBar: AppBar(
-              backgroundColor: const Color(0xFFF1F2F3),
+              backgroundColor: ColorHelper.circleAvatarColor,
               leading: Icon(
                 Icons.close,
                 size: 30.h,
@@ -31,7 +32,7 @@ class LocationView extends GetView<LocationController> {
                     text: "Search",
                     height: 30.h,
                     borderRadius: 25.r,
-                    color: const Color(0xFFFFFFFF),
+                    color: ColorHelper.primaryColor,
                     prefixIcon: Padding(
                       padding: EdgeInsets.all(12.h),
                     ),
@@ -55,7 +56,7 @@ class LocationView extends GetView<LocationController> {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
-                          color: const Color(0xff1B1B1B),
+                          color: ColorHelper.secondryColorText,
                         ),
                   ),
                   Text(
@@ -63,7 +64,7 @@ class LocationView extends GetView<LocationController> {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
-                          color: const Color(0xff1B1B1B),
+                          color: ColorHelper.secondryColorText,
                         ),
                   )
                 ],
@@ -73,7 +74,7 @@ class LocationView extends GetView<LocationController> {
               height: 1.sh / 1.3,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xFFFFFFFF),
+                color: ColorHelper.primaryColor,
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(
                       25.r,
@@ -134,7 +135,7 @@ class LocationView extends GetView<LocationController> {
                                         ?.copyWith(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w400,
-                                          color: const Color(0xFF1DB854),
+                                          color: ColorHelper.secondryColor,
                                         ),
                                   ),
                                 ),

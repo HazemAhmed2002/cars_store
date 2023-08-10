@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,9 +11,9 @@ class AutoPartsScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
-            color: Color(0xff8E8E93),
+            color: ColorHelper.iconColor,
           ),
         ),
         centerTitle: true,
@@ -20,7 +21,7 @@ class AutoPartsScreen extends StatelessWidget {
           "Auto parts",
           style: TextStyle(
             fontSize: 14.sp,
-            color: const Color(0xff1B1B1B),
+            color: ColorHelper.secondryColorText,
           ),
         ),
         actions: [
@@ -30,7 +31,7 @@ class AutoPartsScreen extends StatelessWidget {
               height: 30.h,
               width: 30.w,
               decoration: BoxDecoration(
-                color: const Color(0xffF1F2F3),
+                color: ColorHelper.circleAvatarColor,
                 borderRadius: BorderRadius.circular(25.r),
               ),
               child: IconButton(
@@ -38,7 +39,7 @@ class AutoPartsScreen extends StatelessWidget {
                   icon: Icon(
                     Icons.shopping_cart_outlined,
                     size: 16.w,
-                    color: const Color(0xff1DB854),
+                    color: ColorHelper.secondryColor,
                   )),
             ),
           )
@@ -50,9 +51,9 @@ class AutoPartsScreen extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: const Color(0xffF1F2F3),
+                  color: ColorHelper.circleAvatarColor,
                   border: Border.all(
-                    color: const Color(0xffF1F2F3),
+                    color: ColorHelper.circleAvatarColor,
                   ),
                   borderRadius: BorderRadius.circular(20)),
               height: 35.h,
@@ -60,14 +61,14 @@ class AutoPartsScreen extends StatelessWidget {
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(
-                      color: const Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                       Icons.search,
                       size: 18.w,
                     ),
                     hintText: "Search",
-                    hintStyle: const TextStyle(
+                    hintStyle: TextStyle(
                       fontSize: 14,
-                      color: Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                     )),
               ),
             ),
@@ -83,7 +84,7 @@ class AutoPartsScreen extends StatelessWidget {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: const Color(0xffF1F2F3),
+                                color: ColorHelper.circleAvatarColor,
                                 borderRadius: BorderRadius.circular(15.r),
                               ),
                               width: 54.w,
@@ -94,7 +95,7 @@ class AutoPartsScreen extends StatelessWidget {
                               "Category",
                               style: TextStyle(
                                   fontSize: 14.sp,
-                                  color: const Color(0xff1B1B1B)),
+                                  color: ColorHelper.secondryColorText),
                             )
                           ],
                         ),
@@ -113,9 +114,10 @@ class AutoPartsScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {},
-                  child: const Text(
+                  child: Text(
                     "More >",
-                    style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                    style: TextStyle(
+                        fontSize: 12, color: ColorHelper.secondryColor),
                   ),
                 )
               ],
@@ -135,8 +137,9 @@ class AutoPartsScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) => Container(
                     width: 160.w,
                     decoration: BoxDecoration(
-                        color: const Color(0xffF1F2F3),
-                        border: Border.all(color: const Color(0xffF1F2F3)),
+                        color: ColorHelper.circleAvatarColor,
+                        border:
+                            Border.all(color: ColorHelper.circleAvatarColor),
                         borderRadius: BorderRadius.circular(15.r)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,9 +149,9 @@ class AutoPartsScreen extends StatelessWidget {
                             const Spacer(),
                             IconButton(
                               onPressed: () {},
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.favorite_border,
-                                color: Color(0xff8E8E93),
+                                color: ColorHelper.iconColor,
                               ),
                             ),
                           ],
@@ -168,7 +171,7 @@ class AutoPartsScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xff1B1B1B)),
+                                color: ColorHelper.secondryColorText),
                           ),
                         ),
                         Padding(
@@ -178,8 +181,7 @@ class AutoPartsScreen extends StatelessWidget {
                             maxLines: 2,
                             "Easy to keep car organized and clean",
                             style: TextStyle(
-                                color: const Color(0xff8E8E93),
-                                fontSize: 10.sp),
+                                color: ColorHelper.iconColor, fontSize: 10.sp),
                           ),
                         ),
                         Padding(
@@ -191,7 +193,7 @@ class AutoPartsScreen extends StatelessWidget {
                                 "\$10.00",
                                 style: TextStyle(
                                     fontSize: 12.sp,
-                                    color: const Color(0xff1DB854)),
+                                    color: ColorHelper.secondryColor),
                               ),
                               Container(
                                   height: 20.h,
@@ -201,7 +203,7 @@ class AutoPartsScreen extends StatelessWidget {
                                       color: Colors.white),
                                   child: Icon(
                                     Icons.add,
-                                    color: const Color(0xff1DB854),
+                                    color: ColorHelper.secondryColor,
                                     size: 14.w,
                                   )),
                             ],
@@ -223,9 +225,10 @@ class AutoPartsScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {},
-                  child: const Text(
+                  child: Text(
                     "More >",
-                    style: TextStyle(fontSize: 12, color: Color(0xff1DB854)),
+                    style: TextStyle(
+                        fontSize: 12, color: ColorHelper.secondryColor),
                   ),
                 )
               ],
@@ -236,9 +239,10 @@ class AutoPartsScreen extends StatelessWidget {
                   itemBuilder: (context, index) => Container(
                         height: 86.h,
                         decoration: BoxDecoration(
-                            color: const Color(0xffF1F2F3),
+                            color: ColorHelper.circleAvatarColor,
                             borderRadius: BorderRadius.circular(15.r),
-                            border: Border.all(color: const Color(0xffF1F2F3))),
+                            border: Border.all(
+                                color: ColorHelper.circleAvatarColor)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
@@ -272,13 +276,13 @@ class AutoPartsScreen extends StatelessWidget {
                                         "lightweight compared to steel spacer",
                                         style: TextStyle(
                                             fontSize: 10.sp,
-                                            color: const Color(0xff8E8E93)),
+                                            color: ColorHelper.iconColor),
                                       ),
                                       Text(
                                         "\$21.00",
                                         style: TextStyle(
                                             fontSize: 14.sp,
-                                            color: const Color(0xff1DB854)),
+                                            color: ColorHelper.secondryColor),
                                       ),
                                     ]),
                               ),

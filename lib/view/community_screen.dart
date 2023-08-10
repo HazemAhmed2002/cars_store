@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +15,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: CustomAppBar,
       body: SingleChildScrollView(
         child: Padding(
@@ -44,7 +45,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                   .bodyLarge
                                   ?.copyWith(
                                       fontSize: 14.sp,
-                                      color: const Color(0xff8E8E93)),
+                                      color: ColorHelper.iconColor),
                             )
                           ],
                         ),
@@ -60,12 +61,12 @@ class _CommunityScreenState extends State<CommunityScreen> {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          color: const Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                   ),
                   Icon(
                     Icons.arrow_drop_down_outlined,
-                    color: const Color(0xff1DB854),
+                    color: ColorHelper.secondryColor,
                     size: 30.h,
                   ),
                 ],
@@ -103,7 +104,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                           ?.copyWith(
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w700,
-                                            color: const Color(0xff1DB854),
+                                            color: ColorHelper.secondryColor,
                                           ),
                                     ),
                                     Text(
@@ -133,7 +134,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                       style: TextStyle(
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w400,
-                                        color: const Color(0xff1DB854),
+                                        color: ColorHelper.secondryColor,
                                       ),
                                     ),
                                   ),
@@ -161,7 +162,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                               height: 200.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15.r),
-                                  color: const Color(0xffF1F2F3),
+                                  color: ColorHelper.circleAvatarColor,
                                   image: const DecorationImage(
                                       image: NetworkImage(
                                           "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQJxgIa1tZKl_V1r_zjOKB8YhL3VMjhgi__AMF5bmSUICNCZmIp"),

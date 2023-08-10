@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/buy_car_screen.dart';
 import 'package:cars_store/view/community_screen.dart';
 import 'package:cars_store/view/home_screen.dart';
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomeScreen(),
     const BuyCarScreen(),
     const CommunityScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -26,8 +27,8 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: tabs[_index],
       bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: const Color(0xff1DB854),
-          unselectedItemColor: const Color(0xff8E8E93),
+          selectedItemColor: ColorHelper.secondryColor,
+          unselectedItemColor: ColorHelper.iconColor,
           type: BottomNavigationBarType.fixed,
           currentIndex: _index,
           onTap: (index) {

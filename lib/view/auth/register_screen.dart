@@ -1,4 +1,5 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomTextForm(
+              const CustomTextForm(
                 labelText: "Full name",
                 suffixIcon: Icons.close,
                 obscureText: false,
@@ -29,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomTextForm(
+                    const CustomTextForm(
                       labelText: "E-mail",
                       suffixIcon: Icons.close,
                       obscureText: false,
@@ -40,7 +41,7 @@ class RegisterScreen extends StatelessWidget {
                         "Don't miss our latest promotions and updates",
                         style: TextStyle(
                           fontSize: 14.sp,
-                          color: const Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                       ),
                     )
@@ -49,7 +50,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 28.h),
-                child: CustomTextForm(
+                child: const CustomTextForm(
                   labelText: "password",
                   suffixIcon: Icons.close,
                   obscureText: true,
@@ -57,7 +58,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 28.h),
-                child: CustomTextForm(
+                child: const CustomTextForm(
                   labelText: "Confirm password",
                   suffixIcon: Icons.visibility,
                   obscureText: true,
@@ -66,7 +67,7 @@ class RegisterScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 70.h),
                 child: CustomMaterialButton(onPressed: () {
-                  Get.to(const MainScreen());
+                  Get.to(MainScreen());
                 }),
               ),
             ],

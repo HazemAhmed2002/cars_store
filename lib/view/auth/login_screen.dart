@@ -1,4 +1,5 @@
 import 'package:cars_store/customWidget/custom_material_button.dart';
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/modules/image_path.dart';
 import 'package:cars_store/services/auth_service.dart';
 import 'package:cars_store/view/main_screen.dart';
@@ -69,28 +70,28 @@ class LoginScreen extends GetView<LoginController> {
                         "Agree to our",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: const Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                       ),
                       Text(
                         " Terms ",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: const Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                       ),
                       Text(
                         "and ",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: const Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                       ),
                       Text(
                         "Data Policy.",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: const Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                       ),
                     ],
@@ -99,7 +100,7 @@ class LoginScreen extends GetView<LoginController> {
                     height: 75.h,
                   ),
                   CustomMaterialButton(onPressed: () async {
-                    // Get.to(const VerrificationScreen());
+                    // Get.to( VerrificationScreen());
                     await controller.loginWithPhone(controller.phoneNumber);
                     print("Done");
                   }),
@@ -110,7 +111,7 @@ class LoginScreen extends GetView<LoginController> {
                     "Login with",
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: const Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                     ),
                   ),
                   SizedBox(
@@ -119,13 +120,13 @@ class LoginScreen extends GetView<LoginController> {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) => CircleAvatar(
-                              backgroundColor: const Color(0xffF1F2F3),
+                              backgroundColor: ColorHelper.circleAvatarColor,
                               radius: 0.1.sh / 3,
                               child: InkWell(
                                 onTap: () async {
                                   if (index == 0) {
                                     await controller.signInWithGoogle();
-                                    Get.off(const MainScreen());
+                                    Get.off(MainScreen());
                                     print("Done");
                                   }
                                 },

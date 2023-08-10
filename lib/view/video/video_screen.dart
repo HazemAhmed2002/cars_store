@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/video/video_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -74,9 +75,9 @@ class _VideoScreenState extends State<VideoScreen> {
                               onPressed: () {
                                 Get.back();
                               },
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.arrow_back,
-                                color: Color(0xff8E8E93),
+                                color: ColorHelper.iconColor,
                               )),
                           IconButton(
                             onPressed: () {},
@@ -120,12 +121,13 @@ class _VideoScreenState extends State<VideoScreen> {
                         Text(
                           "Abbey",
                           style: TextStyle(
-                              fontSize: 15.sp, color: const Color(0xff1B1B1B)),
+                              fontSize: 15.sp,
+                              color: ColorHelper.secondryColorText),
                         ),
                         Text(
                           "Aug 31,2020 / 89623 Views",
                           style: TextStyle(
-                              fontSize: 10.sp, color: const Color(0xff8E8E93)),
+                              fontSize: 10.sp, color: ColorHelper.iconColor),
                         ),
                       ],
                     ),
@@ -136,7 +138,7 @@ class _VideoScreenState extends State<VideoScreen> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
-                          color: const Color(0xff1DB854),
+                          color: ColorHelper.secondryColor,
                         ),
                         borderRadius: BorderRadius.circular(25.r),
                       ),
@@ -147,7 +149,7 @@ class _VideoScreenState extends State<VideoScreen> {
                           style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
-                            color: const Color(0xff1DB854),
+                            color: ColorHelper.secondryColor,
                           ),
                         ),
                       ),
@@ -166,7 +168,7 @@ class _VideoScreenState extends State<VideoScreen> {
                   width: double.infinity,
                   height: 65.h,
                   decoration: BoxDecoration(
-                    color: const Color(0xffF1F2F3),
+                    color: ColorHelper.circleAvatarColor,
                     borderRadius: BorderRadius.circular(15.r),
                   ),
                   child: Padding(
@@ -188,7 +190,7 @@ class _VideoScreenState extends State<VideoScreen> {
                               "McLaren/Luxury",
                               style: TextStyle(
                                   fontSize: 10.sp,
-                                  color: const Color(0xff8E8E93)),
+                                  color: ColorHelper.iconColor),
                             ),
                           ],
                         ),
@@ -200,13 +202,13 @@ class _VideoScreenState extends State<VideoScreen> {
                               "\$634,800",
                               style: TextStyle(
                                   fontSize: 14.sp,
-                                  color: const Color(0xff1DB854)),
+                                  color: ColorHelper.secondryColor),
                             ),
                             Text(
                               "Price",
                               style: TextStyle(
                                   fontSize: 10.sp,
-                                  color: const Color(0xff8E8E93)),
+                                  color: ColorHelper.iconColor),
                             ),
                           ],
                         )
@@ -235,10 +237,10 @@ class _VideoScreenState extends State<VideoScreen> {
                       itemBuilder: (context, index) => Container(
                             height: 86.h,
                             decoration: BoxDecoration(
-                                color: const Color(0xffF1F2F3),
+                                color: ColorHelper.circleAvatarColor,
                                 borderRadius: BorderRadius.circular(15.r),
-                                border:
-                                    Border.all(color: const Color(0xffF1F2F3))),
+                                border: Border.all(
+                                    color: ColorHelper.circleAvatarColor)),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
@@ -262,7 +264,7 @@ class _VideoScreenState extends State<VideoScreen> {
                                             "By  Sonny  Jul 29,2020",
                                             style: TextStyle(
                                                 fontSize: 12.sp,
-                                                color: const Color(0xff8E8E93)),
+                                                color: ColorHelper.iconColor),
                                           ),
                                         ]),
                                   ),
@@ -291,7 +293,7 @@ class _VideoScreenState extends State<VideoScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
-          color: const Color(0xffF1F2F3),
+          color: ColorHelper.circleAvatarColor,
         ),
         child: Padding(
           padding: EdgeInsets.only(
@@ -333,10 +335,10 @@ class _VideoScreenState extends State<VideoScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.chat_bubble_outline,
                       size: 17,
-                      color: Color(0xff8E8E93),
+                      color: ColorHelper.iconColor,
                     ),
                     Text(
                       "83",
@@ -348,10 +350,10 @@ class _VideoScreenState extends State<VideoScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.thumb_up_alt_outlined,
                     size: 18,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                   Text(
                     "99",
@@ -362,10 +364,10 @@ class _VideoScreenState extends State<VideoScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.star_border,
                     size: 18,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   ),
                   Text(
                     "collect",

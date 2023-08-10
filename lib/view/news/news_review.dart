@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,7 +31,7 @@ class ReviewNewsScreen extends StatelessWidget {
                     child: Text(
                       dataList[index],
                       style: TextStyle(
-                          fontSize: 14.sp, color: const Color(0xff8E8E93)),
+                          fontSize: 14.sp, color: ColorHelper.iconColor),
                     ),
                   ),
                   itemCount: dataList.length,
@@ -50,7 +51,7 @@ class ReviewNewsScreen extends StatelessWidget {
                           //     color: Colors.white,
                           //     borderRadius: BorderRadius.circular(15.r),
                           //     border:
-                          //         Border.all(color: const Color(0xffF1F2F3))),
+                          //         Border.all(color:  ColorHelper.circleAvatarColor)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -77,28 +78,26 @@ class ReviewNewsScreen extends StatelessWidget {
                                                   style: TextStyle(
                                                     fontSize: 14.sp,
                                                     color:
-                                                        const Color(0xff8E8E93),
+                                                        ColorHelper.iconColor,
                                                   )),
                                             ),
                                             Text(
                                               "3 hours ago",
                                               style: TextStyle(
                                                   fontSize: 10.sp,
-                                                  color:
-                                                      const Color(0xffC7C7CC)),
+                                                  color: ColorHelper.textColor),
                                             ),
                                             const Spacer(),
                                             Text(
                                               "78 ",
                                               style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color:
-                                                      const Color(0xff8E8E93)),
+                                                  color: ColorHelper.iconColor),
                                             ),
-                                            const Icon(
+                                            Icon(
                                               Icons.thumb_up_alt_outlined,
                                               size: 12,
-                                              color: Color(0xff8E8E93),
+                                              color: ColorHelper.iconColor,
                                             )
                                           ],
                                         ),
@@ -108,8 +107,8 @@ class ReviewNewsScreen extends StatelessWidget {
                                               maxLines: 2,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color:
-                                                      const Color(0xff1B1B1B)),
+                                                  color: ColorHelper
+                                                      .secondryColorText),
                                               "Porsche actually wanted to name this something else, but that name was already taycan"),
                                         ),
                                         Padding(
@@ -118,7 +117,8 @@ class ReviewNewsScreen extends StatelessWidget {
                                             "17 Reply",
                                             style: TextStyle(
                                                 fontSize: 10.sp,
-                                                color: const Color(0xff1DB854)),
+                                                color:
+                                                    ColorHelper.secondryColor),
                                           ),
                                         ),
                                       ]),
@@ -138,7 +138,7 @@ class ReviewNewsScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.r),
-                color: const Color(0xffF1F2F3),
+                color: ColorHelper.circleAvatarColor,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,10 +172,10 @@ class ReviewNewsScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.chat_bubble_outline,
                           size: 17,
-                          color: Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                         Text(
                           "83",
@@ -187,10 +187,10 @@ class ReviewNewsScreen extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.thumb_up_alt_outlined,
                         size: 18,
-                        color: Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                       ),
                       Text(
                         "99",
@@ -201,10 +201,10 @@ class ReviewNewsScreen extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.star_border,
                         size: 18,
-                        color: Color(0xff8E8E93),
+                        color: ColorHelper.iconColor,
                       ),
                       Text(
                         "collect",

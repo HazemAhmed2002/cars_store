@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,20 +8,20 @@ class CompareCarsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         centerTitle: true,
         title: Text(
           "Compare Cars",
           style: TextStyle(
             fontSize: 14.sp,
-            color: const Color(0xff1B1B1B),
+            color: ColorHelper.secondryColorText,
           ),
         ),
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
-          color: Color(0xff8E8E93),
+          color: ColorHelper.iconColor,
         ),
       ),
       body: Column(children: [
@@ -49,17 +50,17 @@ class CompareCarsScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xff1B1B1B)),
+                        color: ColorHelper.secondryColorText),
                   ),
                   Text(
                     "Porsche/Luxury/The 2.3L EcoBoost",
                     style: TextStyle(
-                        fontSize: 10.sp, color: const Color(0xff8E8E93)),
+                        fontSize: 10.sp, color: ColorHelper.iconColor),
                   ),
                   Text(
                     "\$62,000.00-\$74,000.00",
                     style: TextStyle(
-                        fontSize: 14.sp, color: const Color(0xff1DB854)),
+                        fontSize: 14.sp, color: ColorHelper.secondryColor),
                   )
                 ],
               )
@@ -72,14 +73,14 @@ class CompareCarsScreen extends StatelessWidget {
             width: double.infinity,
             height: 45.h,
             decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xff1DB854)),
+                border: Border.all(color: ColorHelper.secondryColor),
                 borderRadius: BorderRadius.circular(25.r)),
             child: MaterialButton(
               onPressed: () {},
               child: Text(
                 "+ ADD CARS",
-                style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xff1DB854)),
+                style: TextStyle(
+                    fontSize: 14.sp, color: ColorHelper.secondryColor),
               ),
             ),
           ),
@@ -99,8 +100,7 @@ class CompareCarsScreen extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
                 "Select Similar Cars",
-                style:
-                    TextStyle(fontSize: 14.sp, color: const Color(0xff8E8E93)),
+                style: TextStyle(fontSize: 14.sp, color: ColorHelper.iconColor),
               ),
               SizedBox(
                 height: 20.h,
@@ -119,7 +119,7 @@ class CompareCarsScreen extends StatelessWidget {
                       return Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: const Color(0xffF1F2F3),
+                              color: ColorHelper.circleAvatarColor,
                               borderRadius: BorderRadius.circular(15)),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +139,7 @@ class CompareCarsScreen extends StatelessWidget {
                                   "Mercedes SLC",
                                   style: TextStyle(
                                       fontSize: 14.sp,
-                                      color: const Color(0xff1B1B1B),
+                                      color: ColorHelper.secondryColorText,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -149,15 +149,15 @@ class CompareCarsScreen extends StatelessWidget {
                                   "\$42,70-\$48,70",
                                   style: TextStyle(
                                       fontSize: 12.sp,
-                                      color: const Color(0xff1DB854)),
+                                      color: ColorHelper.secondryColor),
                                 ),
                               ),
                               Row(
                                 children: [
                                   Checkbox(
-                                    activeColor: const Color(0xff8E8E93),
+                                    activeColor: ColorHelper.iconColor,
                                     side: BorderSide(
-                                        color: const Color(0xff8E8E93),
+                                        color: ColorHelper.iconColor,
                                         style: BorderStyle.solid,
                                         strokeAlign: -5.h),
                                     value: false,
@@ -167,7 +167,7 @@ class CompareCarsScreen extends StatelessWidget {
                                     "Compare",
                                     style: TextStyle(
                                         fontSize: 12.sp,
-                                        color: const Color(0xff8E8E93)),
+                                        color: ColorHelper.iconColor),
                                   ),
                                 ],
                               ),

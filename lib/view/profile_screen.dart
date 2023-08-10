@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,14 +8,14 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF1F2F3),
+      backgroundColor: ColorHelper.circleAvatarColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffF1F2F3),
+        backgroundColor: ColorHelper.circleAvatarColor,
         leading: IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_ios,
-              color: Color(0xff8E8E93),
+              color: ColorHelper.iconColor,
             )),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -29,9 +30,9 @@ class ProfileScreen extends StatelessWidget {
               child: IconButton(
                   onPressed: () {},
                   iconSize: 14.w,
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.wechat,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   )),
             ),
             const SizedBox(
@@ -47,9 +48,9 @@ class ProfileScreen extends StatelessWidget {
               child: IconButton(
                   iconSize: 14.w,
                   onPressed: () {},
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.settings,
-                    color: Color(0xff8E8E93),
+                    color: ColorHelper.iconColor,
                   )),
             ),
           ],
@@ -86,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w400,
-                          color: const Color(0xff8E8E93)),
+                          color: ColorHelper.iconColor),
                     ),
                   ],
                 )
@@ -106,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
                       height: 24.h,
                       decoration: BoxDecoration(
                           border: Border.all(
-                            color: const Color(0xff1DB854),
+                            color: ColorHelper.secondryColor,
                           ),
                           borderRadius: BorderRadius.circular(25)),
                       child: Align(
@@ -115,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                           "+ Follow",
                           style: TextStyle(
                             fontSize: 10.sp,
-                            color: const Color(0xff1DB854),
+                            color: ColorHelper.secondryColor,
                           ),
                         ),
                       ),
@@ -131,7 +132,7 @@ class ProfileScreen extends StatelessWidget {
                       Text(
                         "Following",
                         style: TextStyle(
-                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 12.sp, color: ColorHelper.iconColor),
                       ),
                     ],
                   ),
@@ -145,7 +146,7 @@ class ProfileScreen extends StatelessWidget {
                       Text(
                         "Follower",
                         style: TextStyle(
-                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 12.sp, color: ColorHelper.iconColor),
                       ),
                     ],
                   ),
@@ -159,7 +160,7 @@ class ProfileScreen extends StatelessWidget {
                       Text(
                         "Posts",
                         style: TextStyle(
-                            fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                            fontSize: 12.sp, color: ColorHelper.iconColor),
                       ),
                     ],
                   ),
@@ -179,14 +180,14 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(children: [
-                        const Icon(
+                        Icon(
                           Icons.widgets_outlined,
-                          color: Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                         Text(
                           " Common Functions",
                           style: TextStyle(
-                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                              color: ColorHelper.iconColor, fontSize: 12.sp),
                         )
                       ]),
                       SizedBox(
@@ -202,7 +203,7 @@ class ProfileScreen extends StatelessWidget {
                               width: 80.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
-                                  color: const Color(0xffF1F2F3)),
+                                  color: ColorHelper.circleAvatarColor),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -228,14 +229,14 @@ class ProfileScreen extends StatelessWidget {
                         height: 25.h,
                       ),
                       Row(children: [
-                        const Icon(
+                        Icon(
                           Icons.time_to_leave_outlined,
-                          color: Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                         Text(
                           " My cars",
                           style: TextStyle(
-                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                              color: ColorHelper.iconColor, fontSize: 12.sp),
                         )
                       ]),
                       SizedBox(
@@ -246,9 +247,9 @@ class ProfileScreen extends StatelessWidget {
                         children: [
                           Text("Owned/Driven",
                               style: TextStyle(fontSize: 14.sp)),
-                          const Icon(
+                          Icon(
                             Icons.keyboard_arrow_right_rounded,
-                            color: Color(0xff8E8E93),
+                            color: ColorHelper.iconColor,
                           )
                         ],
                       ),
@@ -257,15 +258,15 @@ class ProfileScreen extends StatelessWidget {
                         child: Container(
                             width: double.infinity,
                             height: 1.h,
-                            color: const Color(0xff8E8E93)),
+                            color: ColorHelper.iconColor),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Like List", style: TextStyle(fontSize: 14.sp)),
-                          const Icon(
+                          Icon(
                             Icons.keyboard_arrow_right_rounded,
-                            color: Color(0xff8E8E93),
+                            color: ColorHelper.iconColor,
                           )
                         ],
                       ),
@@ -273,14 +274,14 @@ class ProfileScreen extends StatelessWidget {
                         height: 25.h,
                       ),
                       Row(children: [
-                        const Icon(
+                        Icon(
                           Icons.list_alt,
-                          color: Color(0xff8E8E93),
+                          color: ColorHelper.iconColor,
                         ),
                         Text(
                           " Others",
                           style: TextStyle(
-                              color: const Color(0xff8E8E93), fontSize: 12.sp),
+                              color: ColorHelper.iconColor, fontSize: 12.sp),
                         )
                       ]),
                       SizedBox(
@@ -290,9 +291,9 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Feedback", style: TextStyle(fontSize: 14.sp)),
-                          const Icon(
+                          Icon(
                             Icons.keyboard_arrow_right_rounded,
-                            color: Color(0xff8E8E93),
+                            color: ColorHelper.iconColor,
                           )
                         ],
                       ),
@@ -301,14 +302,16 @@ class ProfileScreen extends StatelessWidget {
                         child: Container(
                             width: double.infinity,
                             height: 1.h,
-                            color: const Color(0xff8E8E93)),
+                            color: ColorHelper.iconColor),
                       ),
                       TextButton(
                         onPressed: () {},
                         child: Text(
                           "Log Out",
                           style: TextStyle(
-                              color: const Color(0xff1DB854), fontSize: 14.sp),
+                            color: ColorHelper.secondryColor,
+                            fontSize: 14.sp,
+                          ),
                         ),
                       )
                     ],

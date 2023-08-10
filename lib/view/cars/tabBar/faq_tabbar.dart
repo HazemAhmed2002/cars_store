@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +15,7 @@ class FAQTabBar extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(15.w),
               decoration: BoxDecoration(
-                color: const Color(0xffF1F2F3),
+                color: ColorHelper.circleAvatarColor,
                 borderRadius: BorderRadius.circular(15.r),
               ),
               width: double.infinity,
@@ -29,12 +30,13 @@ class FAQTabBar extends StatelessWidget {
                         Text(
                           "Have any question?",
                           style: TextStyle(
-                              fontSize: 14.sp, color: const Color(0xff1B1B1B)),
+                              fontSize: 14.sp,
+                              color: ColorHelper.secondryColorText),
                         ),
                         Text(
                           "Click the button",
                           style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xff8E8E93)),
+                              fontSize: 12.sp, color: ColorHelper.iconColor),
                         ),
                       ],
                     ),
@@ -45,7 +47,7 @@ class FAQTabBar extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: 70,
                         height: 30,
-                        color: const Color(0xff1DB854),
+                        color: ColorHelper.secondryColor,
                         onPressed: () {},
                         child: const Text("Ask Now"),
                       ),
@@ -63,7 +65,7 @@ class FAQTabBar extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.r),
-                                color: const Color(0xffF1F2F3)),
+                                color: ColorHelper.circleAvatarColor),
                             width: double.infinity,
                             height: 157.h,
                             child: Padding(
@@ -82,7 +84,8 @@ class FAQTabBar extends StatelessWidget {
                                         "How much price we have to pay for buying Porsche 718 Boxter?",
                                         style: TextStyle(
                                             fontSize: 12.sp,
-                                            color: const Color(0xff1B1B1B)),
+                                            color:
+                                                ColorHelper.secondryColorText),
                                       ),
                                     )
                                   ],
@@ -105,7 +108,8 @@ class FAQTabBar extends StatelessWidget {
                                           "For this, we would suggest you walk into the nearest dealership as they will be the better person to assist you.",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: const Color(0xff1B1B1B)),
+                                              color: ColorHelper
+                                                  .secondryColorText),
                                         ),
                                       )
                                     ]),
@@ -127,8 +131,9 @@ class FAQTabBar extends StatelessWidget {
                                   children: [
                                     Row(
                                       children: [
-                                        const Icon(Icons.thumb_up_alt_outlined,
-                                            size: 14, color: Color(0xff1DB854)),
+                                        Icon(Icons.thumb_up_alt_outlined,
+                                            size: 14,
+                                            color: ColorHelper.secondryColor),
                                         SizedBox(
                                           width: 5.w,
                                         ),
@@ -136,7 +141,7 @@ class FAQTabBar extends StatelessWidget {
                                           "Helpful (6)",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: const Color(0xff1DB854)),
+                                              color: ColorHelper.secondryColor),
                                         ),
                                       ],
                                     ),
@@ -146,10 +151,11 @@ class FAQTabBar extends StatelessWidget {
                                           "10 Answers",
                                           style: TextStyle(
                                               fontSize: 12.sp,
-                                              color: const Color(0xff1DB854)),
+                                              color: ColorHelper.secondryColor),
                                         ),
-                                        const Icon(Icons.arrow_forward_ios,
-                                            size: 11, color: Color(0xff1DB854))
+                                        Icon(Icons.arrow_forward_ios,
+                                            size: 11,
+                                            color: ColorHelper.secondryColor)
                                       ],
                                     )
                                   ],
