@@ -4,11 +4,13 @@ import 'package:cars_store/view/brand/brand_details.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import '../customWidget/custom_card.dart';
 import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
+import 'home_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,8 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+final HomeController homeController = Get.find();
 
 class _HomeScreenState extends State<HomeScreen> {
   String? dropdownValue;
