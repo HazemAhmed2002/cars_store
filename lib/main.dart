@@ -1,3 +1,4 @@
+import 'package:cars_store/helper/api/api_helper.dart';
 import 'package:cars_store/view/auth/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  ApiHelper.inti();
 
   // runApp(DevicePreview(
   //   builder: (context) =>  MyApp(),
