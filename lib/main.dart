@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
 import 'package:device_preview/device_preview.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'firebase_options.dart';
 
 void main() async {
