@@ -5,12 +5,9 @@ import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import '../customWidget/custom_card.dart';
 import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
-import 'home_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,7 +16,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-final HomeController homeController = Get.find();
+// final HomeController homeController = Get.find();
 
 class _HomeScreenState extends State<HomeScreen> {
   String? dropdownValue;
@@ -111,80 +108,78 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: ColorHelper.circleAvatarColor,
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Stack(
-              children: [
-                CarouselSlider(
-                  items: imageList
-                      .map(
-                        (item) => Image.asset(
+            CarouselSlider(
+              items: imageList
+                  .map(
+                    (item) => Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
                           item['image_path'],
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                           width: 340.w,
                           height: 168.h,
                         ),
-                      )
-                      .toList(),
-                  carouselController: carouselController,
-                  options: CarouselOptions(
-                    scrollPhysics: const BouncingScrollPhysics(),
-                    autoPlay: true,
-                    aspectRatio: 2,
-                    viewportFraction: 1,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        currentIndex = index;
-                      });
-                    },
-                  ),
-                ),
-                Positioned(
-                  bottom: 10.h,
-                  left: 0.w,
-                  right: 0.w,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: imageList.asMap().entries.map((entry) {
-                      return GestureDetector(
-                        onTap: () =>
-                            carouselController.animateToPage(entry.key),
-                        child: Container(
-                          width: currentIndex == entry.key ? 8.w : 5.w,
-                          height: 5.h,
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 1.h,
+                        Positioned(
+                            left: 20.w,
+                            bottom: 30.h,
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(" Extreme bump test",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xffA4AEAE),
+                                    )),
+                                Text("First test! 100km/h extreme bump test",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    )),
+                              ],
+                            )),
+                        Positioned(
+                          bottom: 23.h,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: imageList.asMap().entries.map((entry) {
+                              return GestureDetector(
+                                onTap: () =>
+                                    carouselController.animateToPage(entry.key),
+                                child: Container(
+                                  width: currentIndex == entry.key ? 8.w : 5.w,
+                                  height: 5.h,
+                                  margin: EdgeInsets.symmetric(
+                                    horizontal: 1.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: currentIndex == entry.key
+                                          ? ColorHelper.secondryColor
+                                          : const Color(0xff2A3034)),
+                                ),
+                              );
+                            }).toList(),
                           ),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: currentIndex == entry.key
-                                  ? ColorHelper.secondryColor
-                                  : const Color(0xff2A3034)),
                         ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                Positioned(
-                    bottom: 20.h,
-                    left: 45.w,
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(" Extreme bump test",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xffA4AEAE),
-                            )),
-                        Text("First test! 100km/h extreme bump test",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            )),
                       ],
-                    )),
-              ],
+                    ),
+                  )
+                  .toList(),
+              carouselController: carouselController,
+              options: CarouselOptions(
+                scrollPhysics: const BouncingScrollPhysics(),
+                autoPlay: true,
+                aspectRatio: 2,
+                viewportFraction: 1,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 30.w, top: 20.h, right: 30.w),

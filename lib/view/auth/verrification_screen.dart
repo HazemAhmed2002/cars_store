@@ -36,6 +36,7 @@ class VerrificationScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 68.h),
                 child: Pinput(
+                  length: 6,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   defaultPinTheme: PinTheme(
                     width: 57.h,
