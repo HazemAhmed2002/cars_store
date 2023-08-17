@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cars_store/helper/light_theme/color_helper.dart';
+import 'package:cars_store/home_controller.dart';
 import 'package:cars_store/view/brand/brand_details.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
@@ -27,382 +28,409 @@ class _HomeScreenState extends State<HomeScreen> {
     'Item4',
   ];
 
-  List imageList = [
-    {"id": 1, "image_path": 'assets/images/car.png'},
-    {"id": 2, "image_path": 'assets/images/car2.png'},
-    {"id": 3, "image_path": 'assets/images/car3.png'}
-  ];
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
   final int _index = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 90,
-        elevation: 0.0,
-        backgroundColor: ColorHelper.circleAvatarColor,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            DropdownButton(
-              hint: const Text("Select Item"),
-              items: list.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              value: dropdownValue,
-              icon:
-                  Icon(Icons.keyboard_arrow_down, color: ColorHelper.iconColor),
-              elevation: 16,
-              style: TextStyle(color: ColorHelper.iconColor),
-              onChanged: (String? value) {
-                setState(() {
-                  dropdownValue = value!;
-                });
-              },
-            ),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.white,
-                    ),
-                    borderRadius: BorderRadius.circular(20)),
-                height: 35.h,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      prefixIcon: Icon(
-                        color: ColorHelper.iconColor,
-                        Icons.search,
-                        size: 18.w,
-                      ),
-                      hintText: "Search",
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: ColorHelper.iconColor,
-                      )),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8),
-              child: Container(
-                  width: 40.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: const Icon(Icons.message_outlined)),
-            )
-          ],
-        ),
-      ),
-      backgroundColor: ColorHelper.circleAvatarColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CarouselSlider(
-              items: imageList
-                  .map(
-                    (item) => Stack(
-                      alignment: Alignment.center,
+    return GetBuilder<HomeConrtoller>(
+        init: HomeConrtoller(),
+        builder: (controller) {
+          return controller.isLoading
+              ? const CircularProgressIndicator()
+              : Scaffold(
+                  appBar: AppBar(
+                    toolbarHeight: 90,
+                    elevation: 0.0,
+                    backgroundColor: ColorHelper.circleAvatarColor,
+                    title: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset(
-                          item['image_path'],
-                          fit: BoxFit.fill,
-                          width: 340.w,
-                          height: 168.h,
+                        DropdownButton(
+                          hint: const Text("Select Item"),
+                          items: list
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          value: dropdownValue,
+                          icon: Icon(Icons.keyboard_arrow_down,
+                              color: ColorHelper.iconColor),
+                          elevation: 16,
+                          style: TextStyle(color: ColorHelper.iconColor),
+                          onChanged: (String? value) {
+                            setState(() {
+                              dropdownValue = value!;
+                            });
+                          },
                         ),
-                        Positioned(
-                            left: 20.w,
-                            bottom: 30.h,
-                            child: const Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(" Extreme bump test",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xffA4AEAE),
-                                    )),
-                                Text("First test! 100km/h extreme bump test",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    )),
-                              ],
-                            )),
-                        Positioned(
-                          bottom: 23.h,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: imageList.asMap().entries.map((entry) {
-                              return GestureDetector(
-                                onTap: () =>
-                                    carouselController.animateToPage(entry.key),
-                                child: Container(
-                                  width: currentIndex == entry.key ? 8.w : 5.w,
-                                  height: 5.h,
-                                  margin: EdgeInsets.symmetric(
-                                    horizontal: 1.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: currentIndex == entry.key
-                                          ? ColorHelper.secondryColor
-                                          : const Color(0xff2A3034)),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: Colors.white,
                                 ),
-                              );
-                            }).toList(),
+                                borderRadius: BorderRadius.circular(20)),
+                            height: 35.h,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  prefixIcon: Icon(
+                                    color: ColorHelper.iconColor,
+                                    Icons.search,
+                                    size: 18.w,
+                                  ),
+                                  hintText: "Search",
+                                  hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: ColorHelper.iconColor,
+                                  )),
+                            ),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Container(
+                              width: 40.w,
+                              height: 40.h,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: const Icon(Icons.message_outlined)),
+                        )
                       ],
                     ),
-                  )
-                  .toList(),
-              carouselController: carouselController,
-              options: CarouselOptions(
-                scrollPhysics: const BouncingScrollPhysics(),
-                autoPlay: true,
-                aspectRatio: 2,
-                viewportFraction: 1,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                },
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 30.w, top: 20.h, right: 30.w),
-              child: SizedBox(
-                height: 35.h,
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => Container(
-                          width: 120.w,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.white,
-                              ),
-                              borderRadius: BorderRadius.circular(25)),
+                  ),
+                  backgroundColor: ColorHelper.circleAvatarColor,
+                  body: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        CarouselSlider(
+                          items: controller.homeModel.data!.sliders
+                              ?.map(
+                                (item) => Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Image.network(
+                                      // item['image_path'],
+                                      "${item.image}",
+                                      fit: BoxFit.fill,
+                                      width: 340.w,
+                                      height: 168.h,
+                                    ),
+                                    Positioned(
+                                        left: 20.w,
+                                        bottom: 30.h,
+                                        child: const Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(" Extreme bump test",
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color(0xffA4AEAE),
+                                                )),
+                                            Text(
+                                                "First test! 100km/h extreme bump test",
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                )),
+                                          ],
+                                        )),
+                                    Positioned(
+                                      bottom: 23.h,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: controller
+                                            .homeModel.data!.sliders!
+                                            .asMap()
+                                            .entries
+                                            .map((entry) {
+                                          return GestureDetector(
+                                            onTap: () => carouselController
+                                                .animateToPage(entry.key),
+                                            child: Container(
+                                              width: currentIndex == entry.key
+                                                  ? 8.w
+                                                  : 5.w,
+                                              height: 5.h,
+                                              margin: EdgeInsets.symmetric(
+                                                horizontal: 1.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color:
+                                                      currentIndex == entry.key
+                                                          ? ColorHelper
+                                                              .secondryColor
+                                                          : const Color(
+                                                              0xff2A3034)),
+                                            ),
+                                          );
+                                        }).toList(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              .toList(),
+                          carouselController: carouselController,
+                          options: CarouselOptions(
+                            scrollPhysics: const BouncingScrollPhysics(),
+                            autoPlay: true,
+                            aspectRatio: 2,
+                            viewportFraction: 1,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                currentIndex = index;
+                              });
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 30.w, top: 20.h, right: 30.w),
+                          child: SizedBox(
+                            height: 35.h,
+                            child: ListView.separated(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) => Container(
+                                      width: 120.w,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          border: Border.all(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(25)),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            "assets/images/4.png",
+                                            height: 25.h,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          const Text(
+                                            "RX-VISIONs",
+                                            style: TextStyle(fontSize: 14),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                separatorBuilder: (context, index) => SizedBox(
+                                      width: 10.w,
+                                    ),
+                                itemCount: 5),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            right: 30,
+                            top: 20,
+                          ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Image.asset(
-                                "assets/images/4.png",
-                                height: 25.h,
-                                fit: BoxFit.cover,
-                              ),
                               const Text(
-                                "RX-VISIONs",
-                                style: TextStyle(fontSize: 14),
+                                "Top deal",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  "More >",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
+                                ),
                               )
                             ],
                           ),
                         ),
-                    separatorBuilder: (context, index) => SizedBox(
-                          width: 10.w,
+                        SizedBox(
+                          height: 15.h,
                         ),
-                    itemCount: 5),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                right: 30,
-                top: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Top deal",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "More >",
-                      style: TextStyle(
-                          fontSize: 12, color: ColorHelper.secondryColor),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            top: 10,
+                          ),
+                          child: SizedBox(
+                            height: 225.h,
+                            child: ListView.separated(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder:
+                                  (BuildContext context, int index) => SizedBox(
+                                width: 15.w,
+                              ),
+                              itemCount: 3,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  const customCard(),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            right: 30,
+                            top: 20,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Popular brands",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Get.to(const BrandDetailsScreen());
+                                },
+                                child: Text(
+                                  "More >",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            top: 10,
+                          ),
+                          child: SizedBox(
+                            height: 102.h,
+                            child: ListView.separated(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder:
+                                  (BuildContext context, int index) => SizedBox(
+                                width: 15.w,
+                              ),
+                              itemCount: 4,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  const customCardBrand(),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            right: 30,
+                            top: 20,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Upcoming",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  "More >",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            top: 10,
+                          ),
+                          child: SizedBox(
+                            height: 225.h,
+                            child: ListView.separated(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder:
+                                  (BuildContext context, int index) => SizedBox(
+                                width: 15.w,
+                              ),
+                              itemCount: 3,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  const customCard(),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30,
+                            right: 30,
+                            top: 20,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "News",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Get.to(const NewsDetailsScreen());
+                                },
+                                child: Text(
+                                  "More >",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: ColorHelper.secondryColor),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: SizedBox(
+                            child: ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              separatorBuilder:
+                                  (BuildContext context, int index) => SizedBox(
+                                height: 15.w,
+                              ),
+                              itemCount: 3,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  const customCardNews(),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                top: 10,
-              ),
-              child: SizedBox(
-                height: 225.h,
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    width: 15.w,
                   ),
-                  itemCount: 3,
-                  itemBuilder: (BuildContext context, int index) =>
-                      const customCard(),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                right: 30,
-                top: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Popular brands",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Get.to(const BrandDetailsScreen());
-                    },
-                    child: Text(
-                      "More >",
-                      style: TextStyle(
-                          fontSize: 12, color: ColorHelper.secondryColor),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                top: 10,
-              ),
-              child: SizedBox(
-                height: 102.h,
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    width: 15.w,
-                  ),
-                  itemCount: 4,
-                  itemBuilder: (BuildContext context, int index) =>
-                      const customCardBrand(),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                right: 30,
-                top: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Upcoming",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "More >",
-                      style: TextStyle(
-                          fontSize: 12, color: ColorHelper.secondryColor),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                top: 10,
-              ),
-              child: SizedBox(
-                height: 225.h,
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    width: 15.w,
-                  ),
-                  itemCount: 3,
-                  itemBuilder: (BuildContext context, int index) =>
-                      const customCard(),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
-                right: 30,
-                top: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "News",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Get.to(const NewsDetailsScreen());
-                    },
-                    child: Text(
-                      "More >",
-                      style: TextStyle(
-                          fontSize: 12, color: ColorHelper.secondryColor),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: SizedBox(
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    height: 15.w,
-                  ),
-                  itemCount: 3,
-                  itemBuilder: (BuildContext context, int index) =>
-                      const customCardNews(),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                );
+        });
   }
 }
