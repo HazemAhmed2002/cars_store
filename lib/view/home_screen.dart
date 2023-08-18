@@ -6,6 +6,7 @@ import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:pinput/pinput.dart';
 import '../customWidget/custom_card.dart';
 import '../customWidget/custom_card_brand.dart';
 import '../customWidget/custom_card_news.dart';
@@ -127,18 +128,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Positioned(
                                         left: 20.w,
                                         bottom: 30.h,
-                                        child: const Column(
+                                        child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(" Extreme bump test",
-                                                style: TextStyle(
+                                            Text("${item.id}",
+                                                style: const TextStyle(
                                                   fontSize: 12,
                                                   color: Color(0xffA4AEAE),
                                                 )),
-                                            Text(
-                                                "First test! 100km/h extreme bump test",
-                                                style: TextStyle(
+                                            Text("${item.title}",
+                                                maxLines: 1,
+                                                style: const TextStyle(
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
@@ -218,14 +219,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Image.asset(
-                                            "assets/images/4.png",
-                                            height: 25.h,
+                                          Image.network(
+                                            "${controller.homeModel.data!.brands![index].logo}",
+                                            height: 20.h,
                                             fit: BoxFit.cover,
                                           ),
-                                          const Text(
-                                            "RX-VISIONs",
-                                            style: TextStyle(fontSize: 14),
+                                          SizedBox(
+                                            width: 5.w,
+                                          ),
+                                          Text(
+                                            controller.homeModel.data!
+                                                .brands![index].name
+                                                .toString(),
+                                            style:
+                                                const TextStyle(fontSize: 14),
                                           )
                                         ],
                                       ),
@@ -233,7 +240,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 separatorBuilder: (context, index) => SizedBox(
                                       width: 10.w,
                                     ),
-                                itemCount: 5),
+                                itemCount:
+                                    controller.homeModel.data!.brands!.length),
                           ),
                         ),
                         Padding(
@@ -279,9 +287,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   (BuildContext context, int index) => SizedBox(
                                 width: 15.w,
                               ),
-                              itemCount: 3,
+                              itemCount:
+                                  controller.homeModel.data!.cars!.length,
                               itemBuilder: (BuildContext context, int index) =>
-                                  const customCard(),
+                                  customCard(index: index),
                             ),
                           ),
                         ),
@@ -330,9 +339,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   (BuildContext context, int index) => SizedBox(
                                 width: 15.w,
                               ),
-                              itemCount: 4,
+                              itemCount:
+                                  controller.homeModel.data!.brands!.length,
                               itemBuilder: (BuildContext context, int index) =>
-                                  const customCardBrand(),
+                                  customCardBrand(index: index),
                             ),
                           ),
                         ),
@@ -376,9 +386,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   (BuildContext context, int index) => SizedBox(
                                 width: 15.w,
                               ),
-                              itemCount: 3,
+                              itemCount:
+                                  controller.homeModel.data!.cars!.length,
                               itemBuilder: (BuildContext context, int index) =>
-                                  const customCard(),
+                                  customCard(index: index),
                             ),
                           ),
                         ),
