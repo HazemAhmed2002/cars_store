@@ -23,7 +23,11 @@ class BrandDetailsScreen extends GetView<LocationController> {
       init: BrandConrtoller(),
       builder: (controller) {
         return controller.isLoading
-            ? const Center(child: CircularProgressIndicator())
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: ColorHelper.secondryColor,
+                ),
+              )
             : Scaffold(
                 appBar: AppBar(
                   toolbarHeight: 80.h,

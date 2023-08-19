@@ -25,9 +25,12 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
         init: BuyCarConrtoller(),
         builder: (controller) {
           return controller.isLoading
-              ? const Center(child: CircularProgressIndicator())
-              : 
-              Scaffold(
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: ColorHelper.secondryColor,
+                  ),
+                )
+              : Scaffold(
                   backgroundColor: ColorHelper.circleAvatarColor,
                   appBar: AppBar(
                     toolbarHeight: 90,

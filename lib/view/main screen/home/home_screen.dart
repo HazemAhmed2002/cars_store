@@ -6,7 +6,6 @@ import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:pinput/pinput.dart';
 import '../../../customWidget/custom_card.dart';
 import '../../../customWidget/custom_card_brand.dart';
 import '../../../customWidget/custom_card_news.dart';
@@ -31,7 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
-  final int _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
         init: HomeConrtoller(),
         builder: (controller) {
           return controller.isLoading
-              ? const Center(child: CircularProgressIndicator())
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: ColorHelper.secondryColor,
+                  ),
+                )
               : Scaffold(
                   appBar: AppBar(
                     toolbarHeight: 90,
@@ -119,7 +121,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   alignment: Alignment.center,
                                   children: [
                                     Image.network(
-                                      // item['image_path'],
                                       "${item.image}",
                                       fit: BoxFit.fill,
                                       width: 340.w,

@@ -38,7 +38,11 @@ class _ShowBrandScreenState extends State<ShowBrandScreen> {
         init: ShowBrandConrtoller(),
         builder: (controller) {
           return controller.isLoading
-              ? const Center(child: CircularProgressIndicator())
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: ColorHelper.secondryColor,
+                  ),
+                )
               : Scaffold(
                   backgroundColor: ColorHelper.circleAvatarColor,
                   appBar: AppBar(
