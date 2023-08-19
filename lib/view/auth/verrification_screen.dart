@@ -57,7 +57,7 @@ class VerrificationScreen extends StatelessWidget {
                   padding: EdgeInsets.only(top: 70.h),
                   child: CustomMaterialButton(
                     onPressed: () {
-                      Get.to(const RegisterScreen());
+                      Get.to(() => const RegisterScreen());
                     },
                   )),
               SizedBox(

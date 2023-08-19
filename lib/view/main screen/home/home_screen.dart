@@ -311,7 +311,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Get.to(const BrandDetailsScreen());
+                                  Get.to(() => const BrandDetailsScreen());
                                 },
                                 child: Text(
                                   "More >",
@@ -410,7 +410,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Get.to(const NewsDetailsScreen());
+                                  Get.to(() => const NewsDetailsScreen());
                                 },
                                 child: Text(
                                   "More >",

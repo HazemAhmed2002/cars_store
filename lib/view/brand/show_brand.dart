@@ -183,34 +183,38 @@ class _ShowBrandScreenState extends State<ShowBrandScreen> {
                                               height: 80,
                                             ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "Acura CDX",
-                                                style: TextStyle(
-                                                    fontSize: 14.sp,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Text(
-                                                "${controller.carModel.data![index].name}",
-                                                style: TextStyle(
-                                                    fontSize: 10.sp,
-                                                    color:
-                                                        ColorHelper.iconColor),
-                                              ),
-                                              Text(
-                                                "\$${controller.carModel.data![index].price}",
-                                                style: TextStyle(
-                                                    fontSize: 14.sp,
-                                                    color: ColorHelper
-                                                        .secondryColor),
-                                              )
-                                            ],
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "${controller.carModel.data![index].brand!.name}",
+                                                  style: TextStyle(
+                                                      fontSize: 14.sp,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  maxLines: 1,
+                                                ),
+                                                Text(
+                                                  "${controller.carModel.data![index].name}",
+                                                  style: TextStyle(
+                                                      fontSize: 10.sp,
+                                                      color: ColorHelper
+                                                          .iconColor),
+                                                  maxLines: 1,
+                                                ),
+                                                Text(
+                                                  "\$${controller.carModel.data![index].price}",
+                                                  style: TextStyle(
+                                                      fontSize: 14.sp,
+                                                      color: ColorHelper
+                                                          .secondryColor),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),

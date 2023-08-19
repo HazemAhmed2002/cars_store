@@ -21,7 +21,7 @@ class SearchBrandScreen extends StatelessWidget {
         backgroundColor: ColorHelper.circleAvatarColor,
         leading: IconButton(
             onPressed: () {
-              Get.to(SearchScreen());
+              Get.to(() => SearchScreen());
             },
             icon: Icon(
               Icons.arrow_back,

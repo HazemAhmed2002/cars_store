@@ -17,7 +17,7 @@ class SearchModelScreen extends StatelessWidget {
           backgroundColor: ColorHelper.circleAvatarColor,
           leading: IconButton(
               onPressed: () {
-                // Get.to(SearchScreen());
+                // Get.to(() => SearchScreen());
               },
               icon: Icon(
                 Icons.arrow_back,
@@ -225,7 +225,7 @@ class SearchModelScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Get.to(const NewsDetailsScreen());
+                                Get.to(() => const NewsDetailsScreen());
                               },
                               child: Row(children: [
                                 Text(
@@ -304,7 +304,7 @@ class SearchModelScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Get.to(VideoScreen());
+                                Get.to(() => const VideoScreen());
                               },
                               child: Row(children: [
                                 Text(

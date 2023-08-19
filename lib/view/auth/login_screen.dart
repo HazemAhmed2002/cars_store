@@ -100,7 +100,7 @@ class LoginScreen extends GetView<LoginController> {
                     height: 75.h,
                   ),
                   CustomMaterialButton(onPressed: () async {
-                    // Get.to( VerrificationScreen());
+                    // Get.to(() => VerrificationScreen());
                     await controller.loginWithPhone(controller.phoneNumber);
                     print("Done");
                   }),
@@ -126,7 +126,7 @@ class LoginScreen extends GetView<LoginController> {
                                 onTap: () async {
                                   if (index == 0) {
                                     await controller.signInWithGoogle();
-                                    Get.off(MainScreen());
+                                    Get.off(const MainScreen());
                                     print("Done");
                                   }
                                 },

@@ -82,12 +82,12 @@ class BrandDetailsScreen extends GetView<LocationController> {
                                           color: ColorHelper.primaryColor),
                                       child: InkWell(
                                         onTap: () {
-                                          Get.to(ShowBrandScreen(
-                                            id: controller
-                                                .brandsModel.data![index].id!,
-                                            name: controller
-                                                .brandsModel.data![index].name!,
-                                          ));
+                                          Get.to(() => ShowBrandScreen(
+                                                id: controller.brandsModel
+                                                    .data![index].id!,
+                                                name: controller.brandsModel
+                                                    .data![index].name!,
+                                              ));
                                         },
                                         child: Column(
                                           mainAxisAlignment:
