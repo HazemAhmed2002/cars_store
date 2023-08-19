@@ -1,4 +1,4 @@
-import 'package:cars_store/models/home_model.dart';
+import 'package:cars_store/models%20api/home_model.dart';
 import 'package:cars_store/services/api/repo/main_repo.dart';
 import 'package:get/get.dart';
 

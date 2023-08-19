@@ -1,15 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cars_store/helper/light_theme/color_helper.dart';
-import 'package:cars_store/home_controller.dart';
+import 'package:cars_store/view/main%20screen/home/home_controller.dart';
 import 'package:cars_store/view/brand/brand_details.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
-import '../customWidget/custom_card.dart';
-import '../customWidget/custom_card_brand.dart';
-import '../customWidget/custom_card_news.dart';
+import '../../../customWidget/custom_card.dart';
+import '../../../customWidget/custom_card_brand.dart';
+import '../../../customWidget/custom_card_news.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -132,14 +132,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text("${item.id}",
+                                            Text("${item.title}",
                                                 style: const TextStyle(
                                                   fontSize: 12,
                                                   color: Color(0xffA4AEAE),
                                                 )),
-                                            Text("${item.title}",
+                                            const Text(
+                                                "First test! 100km/h extreme bump test",
                                                 maxLines: 1,
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,

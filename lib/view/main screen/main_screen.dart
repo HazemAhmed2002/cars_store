@@ -1,8 +1,8 @@
 import 'package:cars_store/helper/light_theme/color_helper.dart';
-import 'package:cars_store/view/buy_car_screen.dart';
-import 'package:cars_store/view/community_screen.dart';
-import 'package:cars_store/view/home_screen.dart';
-import 'package:cars_store/view/profile_screen.dart';
+import 'package:cars_store/view/main%20screen/buy%20car/buy_car_screen.dart';
+import 'package:cars_store/view/main%20screen/community/community_screen.dart';
+import 'package:cars_store/view/main%20screen/home/home_screen.dart';
+import 'package:cars_store/view/main%20screen/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {

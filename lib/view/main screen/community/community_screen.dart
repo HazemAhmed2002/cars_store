@@ -2,7 +2,7 @@ import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../customWidget/custom_appbar.dart';
+import '../../../customWidget/custom_appbar.dart';
 
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
