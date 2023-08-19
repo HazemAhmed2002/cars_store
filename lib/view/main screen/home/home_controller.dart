@@ -6,7 +6,7 @@ class HomeConrtoller extends GetxController {
   @override
   void onInit() {
     getHomeData();
-    // TODO: implement onInit
+
     super.onInit();
   }
 
