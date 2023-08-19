@@ -1,21 +1,21 @@
-import 'package:cars_store/models%20api/home_model.dart';
+import 'package:cars_store/models%20api/car_model.dart';
 import 'package:cars_store/services/api/repo/main_repo.dart';
 import 'package:get/get.dart';
 
-class HomeConrtoller extends GetxController {
+class BuyCarConrtoller extends GetxController {
   @override
   void onInit() {
-    getHomeData();
+    getCarsData();
     // TODO: implement onInit
     super.onInit();
   }
 
-  HomeModel homeModel = HomeModel();
+  CarModel carModel = CarModel();
   bool isLoading = false;
-  getHomeData() async {
+  getCarsData() async {
     isLoading = true;
     update();
-    homeModel = await MainRepo().getHomeModel();
+    carModel = await MainRepo().getCarModel();
     isLoading = false;
     update();
   }

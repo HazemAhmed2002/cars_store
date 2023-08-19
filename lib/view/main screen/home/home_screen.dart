@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/main%20screen/home/home_controller.dart';
-import 'package:cars_store/view/brand/brand_details.dart';
+import 'package:cars_store/view/brand/brand_details_screen.dart';
 import 'package:cars_store/view/news/news_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         init: HomeConrtoller(),
         builder: (controller) {
           return controller.isLoading
-              ? const CircularProgressIndicator()
+              ? const Center(child: CircularProgressIndicator())
               : Scaffold(
                   appBar: AppBar(
                     toolbarHeight: 90,
