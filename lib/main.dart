@@ -1,3 +1,4 @@
+import 'package:cars_store/view/auth/login_screen.dart';
 import 'package:cars_store/view/main%20screen/main_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const MainScreen());
+              home: 
+              LoginScreen());
         });
   }
 }

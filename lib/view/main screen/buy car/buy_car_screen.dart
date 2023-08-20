@@ -2,6 +2,7 @@ import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/view/main%20screen/buy%20car/buy_car_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class BuyCarScreen extends StatefulWidget {
@@ -19,6 +20,20 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
     'Item3',
     'Item4',
   ];
+  Map<String, dynamic> slider = {
+    'image': [
+      'assets/images/maintain.svg',
+      'assets/images/hot.svg',
+      'assets/images/featured.svg',
+      'assets/images/discount.svg',
+    ],
+    'string': [
+      'Sales',
+      'Hot',
+      'Featured',
+      'Discount',
+    ]
+  };
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BuyCarConrtoller>(
@@ -114,7 +129,7 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) => Container(
-                                      width: 85.w,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           border: Border.all(
@@ -126,13 +141,16 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Image.asset(
-                                              "assets/images/4.png",
-                                              height: 25.h,
+                                            SvgPicture.asset(
+                                              slider['image'][index],
+                                              height: 20.h,
                                               fit: BoxFit.cover,
                                             ),
+                                            SizedBox(
+                                              width: 5.w,
+                                            ),
                                             Text(
-                                              "Sales",
+                                              slider['string'][index],
                                               style: TextStyle(fontSize: 14.sp),
                                             )
                                           ]),
@@ -140,7 +158,7 @@ class _BuyCarScreenState extends State<BuyCarScreen> {
                                 separatorBuilder: (context, index) => SizedBox(
                                       width: 10.w,
                                     ),
-                                itemCount: 5),
+                                itemCount: 4),
                           ),
                         ),
                         Padding(

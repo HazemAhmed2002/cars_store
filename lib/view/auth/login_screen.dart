@@ -3,6 +3,7 @@ import 'package:cars_store/helper/light_theme/color_helper.dart';
 import 'package:cars_store/modules/image_path.dart';
 import 'package:cars_store/services/auth_service.dart';
 import 'package:cars_store/view/main%20screen/main_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -127,7 +128,9 @@ class LoginScreen extends GetView<LoginController> {
                                   if (index == 0) {
                                     await controller.signInWithGoogle();
                                     Get.off(const MainScreen());
-                                    print("Done");
+                                  }
+                                  if (index == 2) {
+                                    // signInWithFacebook();
                                   }
                                 },
                                 child: Image.asset(
@@ -151,3 +154,22 @@ class LoginScreen extends GetView<LoginController> {
     );
   }
 }
+
+// String userEmail = "";
+
+// Future<UserCredential> signInWithFacebook() async {
+//   // Trigger the sign-in flow
+//   final LoginResult loginResult = await FacebookAuth.instance
+//       .login(permissions: ['email', 'public_profile', 'user_birthday']);
+
+//   // Create a credential from the access token
+//   final OAuthCredential facebookAuthCredential =
+//       FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+//   final userData = await FacebookAuth.instance.getUserData();
+
+//   userEmail = userData['email'];
+
+//   // Once signed in, return the UserCredential
+//   return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+// }
