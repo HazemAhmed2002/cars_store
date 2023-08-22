@@ -5,6 +5,7 @@ import 'package:cars_store/services/auth_service.dart';
 import 'package:cars_store/view/main%20screen/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -130,6 +131,7 @@ class LoginScreen extends GetView<LoginController> {
                                     Get.off(const MainScreen());
                                   }
                                   if (index == 2) {
+                                    await facebookSignIn();
                                     // signInWithFacebook();
                                   }
                                 },
@@ -155,21 +157,15 @@ class LoginScreen extends GetView<LoginController> {
   }
 }
 
-// String userEmail = "";
+Future<void> facebookSignIn() async {
+  final LoginResult result =
+      await FacebookAuth.instance.login().catchError((e) {});
 
-// Future<UserCredential> signInWithFacebook() async {
-//   // Trigger the sign-in flow
-//   final LoginResult loginResult = await FacebookAuth.instance
-//       .login(permissions: ['email', 'public_profile', 'user_birthday']);
-
-//   // Create a credential from the access token
-//   final OAuthCredential facebookAuthCredential =
-//       FacebookAuthProvider.credential(loginResult.accessToken!.token);
-
-//   final userData = await FacebookAuth.instance.getUserData();
-
-//   userEmail = userData['email'];
-
-//   // Once signed in, return the UserCredential
-//   return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-// }
+  if (result.status == LoginStatus.success) {
+    final String accessToken = result.accessToken!.token;
+    final credential = FacebookAuthProvider.credential(accessToken);
+    await FirebaseAuth.instance.signInWithCredential(credential).then((value) {
+      Get.offAll(() => const MainScreen());
+    });
+  }
+}

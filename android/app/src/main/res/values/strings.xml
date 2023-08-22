@@ -1,0 +1,9 @@
+<?xmi version-"1.0" encoding="utf-8"?>
+<resources>
+
+<string name= "app_name">cars store</string>
+<string name="facebook_app_id">834783241225492</string>
+<string name="fb_login_protocol_scheme">fb834783241225492</string>
+<string name="facebook_client_token">7afd873faf11a74f172b3f3b64ab1816</string>
+
+</resources>
